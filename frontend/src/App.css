@@ -1,0 +1,73 @@
+/* Contenedor principal (dos columnas) */
+.app-container {
+  display: flex; /* Diseño en columnas */
+  flex-direction: row; /* Las columnas estarán lado a lado */
+  background-color: #f0f0f0; /* Fondo gris claro */
+  height: 100vh; /* La altura ocupará toda la ventana del navegador */
+  padding: 20px;
+  gap: 20px; /* Espacio entre las columnas */
+  box-sizing: border-box; /* Incluye el padding en el cálculo del tamaño */
+  overflow: hidden; /* Asegura que no haya scroll */
+}
+
+/* Columnas */
+.column {
+  flex: 1; /* Ambas columnas tendrán el mismo tamaño */
+  background-color: #ffffff; /* Fondo blanco para contraste */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 5px; /* Esquinas redondeadas */
+  padding: 20px;
+  box-sizing: border-box; /* Asegura que el padding no rompa el diseño */
+  display: flex;
+  flex-direction: column; /* Alineación vertical */
+  justify-content: flex-start; /* Alinea el contenido al inicio (parte superior) */
+  overflow: hidden; /* Evita scroll dentro de las columnas */
+}
+
+/* Estilo específico para el formulario */
+form {
+  display: flex;
+  flex-direction: column; /* Asegura que el textarea y el botón estén apilados verticalmente */
+  gap: 10px; /* Espacio entre el textarea y el botón */
+  flex: 1; /* El formulario ocupa el espacio restante en la columna */
+}
+
+/* Estilo para el textarea */
+textarea {
+  flex-grow: 1; /* El textarea se expande para ocupar todo el espacio disponible */
+  resize: none; /* Deshabilita el redimensionamiento del textarea */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  padding: 10px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 5px; /* Esquinas redondeadas */
+  box-sizing: border-box; /* Incluye el padding en el cálculo del tamaño */
+}
+
+/* Estilo del botón */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff; /* Azul */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+/* Caja de resultados */
+.result-box {
+  background-color: #e9e9e9; /* Fondo gris claro */
+  border: 1px solid #ccc; /* Borde gris */
+  border-radius: 5px; /* Esquinas redondeadas */
+  padding: 10px;
+  height: 100%; /* Ocupa toda la altura disponible */
+  overflow-y: auto; /* Scroll interno si el contenido es muy grande */
+  white-space: pre-wrap; /* Mantiene los saltos de línea */
+  font-family: 'Courier New', Courier, monospace; /* Fuente estilo consola */
+}
