@@ -8,25 +8,32 @@ app.use(express.json()); // Middleware para manejar JSON
 
 // Ruta para procesar texto
 app.post('/process', (req, res) => {
-    const { text } = req.body; // Recibir el texto desde el frontend
+    const { text, checkboxes } = req.body; // Recibir texto y checkboxes desde el frontend
 
     // Validación del campo 'text'
     if (!text || typeof text !== 'string' || text.trim() === '') {
-        // Si el texto no existe, no es una cadena o está vacío
         return res.status(400).json({ error: 'El campo "text" es inválido o está vacío' });
     }
 
-    // Llama al script de Python para procesar el texto
-    const pythonProcess = spawn('python', ['../parsing.py', text]);
+    // Validación del campo 'checkboxes'
+    if (!checkboxes || typeof checkboxes !== 'object') {
+        return res.status(400).json({ error: 'El campo "checkboxes" es inválido o está vacío' });
+    }
+
+    // Convierte los checkboxes a un formato adecuado para el script de Python
+    const checkboxesArg = JSON.stringify(checkboxes);
+
+    // Llama al script de Python pasando el texto y los checkboxes como argumentos
+    const pythonProcess = spawn('python', ['../parsing.py', text, checkboxesArg]);
 
     let result = '';
     pythonProcess.stdout.on('data', (data) => {
-        result += data.toString(); // Captura la salida del script de Python
+        result += data.toString();
     });
 
     pythonProcess.stderr.on('data', (data) => {
         console.error(`Error en el script de Python: ${data}`);
-        res.status(500).json({ error: 'Error al procesar el texto' });
+        res.status(500).json({ error: 'Error al procesar el texto y checkboxes' });
     });
 
     pythonProcess.on('close', () => {

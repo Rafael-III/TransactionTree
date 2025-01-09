@@ -71,3 +71,17 @@ button:hover {
   white-space: pre-wrap; /* Mantiene los saltos de línea */
   font-family: 'Courier New', Courier, monospace; /* Fuente estilo consola */
 }
+
+.checkbox-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+}
+.checkbox-container label {
+  flex: 1; /* Permite que cada checkbox ocupe el mismo espacio */
+  text-align: center; /* Centra el texto y el checkbox dentro de su área */
+}
+
