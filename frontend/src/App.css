@@ -85,3 +85,26 @@ button:hover {
   text-align: center; /* Centra el texto y el checkbox dentro de su área */
 }
 
+.radio-container label {
+    display: block;
+    margin-bottom: 10px; /* Espaciado opcional */
+}
+
+.database-input-container {
+  margin-left: 20px; /* Alinea el contenido con el radio botón */
+  margin-top: 10px; /* Espaciado superior */
+}
+
+.database-input-container span {
+  margin-right: 10px; /* Espaciado entre el texto y el input */
+}
+
+.database-input-container input {
+  width: 60px;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+

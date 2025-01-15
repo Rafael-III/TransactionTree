@@ -1,0 +1,6016 @@
+*******************************************************************
+                         TRANSACTION id: 3              
+*******************************************************************
+4. Transaction Date: 2021-01-08
+5. Transaction Time: 11:51:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 14.10
+36. Items Soldt: 14.94
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+38. detailedTransactionData 3:
+     40. Product Id: *** Transformation unclear
+     41. Description: SMUCKERS JELLY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.59
+38. detailedTransactionData 4:
+     40. Product Id: *** Transformation unclear
+     41. Description: LIBBYS PUMPKIN
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.79
+38. detailedTransactionData 5:
+     40. Product Id: *** Transformation unclear
+     41. Description: FRANKS CHILI SCE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.49
+38. detailedTransactionData 6:
+     40. Product Id: *** Transformation unclear
+     41. Description: FRANKS CHILI SCE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.49
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.0
+47. Ext Dollar Amount: -1.0
+48. Return Amount: -1.0
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 1.00
+     v. Discount Description: MFR COUPON SAVINGS
+     vi. Discount Reason Code: MC
+     viii. PrintLine: -F
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.75
+50. Item Tax 2:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.69
+50. Item Tax 3:
+     iii. Tax Amount: 0.05
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.59
+50. Item Tax 4:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.79
+50. Item Tax 5:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.49
+50. Item Tax 6:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.49
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 14.10
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.07
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 14.10 - 0.30 = 13.80
+     ii. Discount Total: 1.14
+     iii. Discount Total Amount: 13.80
+     iv. Total Amount: 14.10
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 7              
+*******************************************************************
+4. Transaction Date: 2021-01-08
+5. Transaction Time: 11:51:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 14.10
+36. Items Soldt: 14.94
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+38. detailedTransactionData 3:
+     40. Product Id: *** Transformation unclear
+     41. Description: SMUCKERS JELLY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.59
+38. detailedTransactionData 4:
+     40. Product Id: *** Transformation unclear
+     41. Description: LIBBYS PUMPKIN
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.79
+38. detailedTransactionData 5:
+     40. Product Id: *** Transformation unclear
+     41. Description: FRANKS CHILI SCE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.49
+38. detailedTransactionData 6:
+     40. Product Id: *** Transformation unclear
+     41. Description: FRANKS CHILI SCE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.49
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.0
+47. Ext Dollar Amount: -1.0
+48. Return Amount: -1.0
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 1.00
+     v. Discount Description: MFR COUPON SAVINGS
+     vi. Discount Reason Code: MC
+     viii. PrintLine: -F
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.75
+50. Item Tax 2:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.69
+50. Item Tax 3:
+     iii. Tax Amount: 0.05
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.59
+50. Item Tax 4:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.79
+50. Item Tax 5:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.49
+50. Item Tax 6:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.49
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 14.10
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.07
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 14.10 - 0.30 = 13.80
+     ii. Discount Total: 1.14
+     iii. Discount Total Amount: 13.80
+     iv. Total Amount: 14.10
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 11              
+*******************************************************************
+4. Transaction Date: 2021-01-08
+5. Transaction Time: 11:51:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 14.10
+36. Items Soldt: 14.94
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+38. detailedTransactionData 3:
+     40. Product Id: *** Transformation unclear
+     41. Description: SMUCKERS JELLY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.59
+38. detailedTransactionData 4:
+     40. Product Id: *** Transformation unclear
+     41. Description: LIBBYS PUMPKIN
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.79
+38. detailedTransactionData 5:
+     40. Product Id: *** Transformation unclear
+     41. Description: FRANKS CHILI SCE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.49
+38. detailedTransactionData 6:
+     40. Product Id: *** Transformation unclear
+     41. Description: FRANKS CHILI SCE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.49
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.0
+47. Ext Dollar Amount: -1.0
+48. Return Amount: -1.0
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 1.00
+     v. Discount Description: MFR COUPON SAVINGS
+     vi. Discount Reason Code: MC
+     viii. PrintLine: -F
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.75
+50. Item Tax 2:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.69
+50. Item Tax 3:
+     iii. Tax Amount: 0.05
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.59
+50. Item Tax 4:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.79
+50. Item Tax 5:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.49
+50. Item Tax 6:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.49
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 14.10
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.07
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 14.10 - 0.30 = 13.80
+     ii. Discount Total: 1.14
+     iii. Discount Total Amount: 13.80
+     iv. Total Amount: 14.10
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 15              
+*******************************************************************
+4. Transaction Date: 2021-01-13
+5. Transaction Time: 09:57:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 13.00
+36. Items Soldt: 14.94
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+38. detailedTransactionData 3:
+     40. Product Id: *** Transformation unclear
+     41. Description: SMUCKERS JELLY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.59
+38. detailedTransactionData 4:
+     40. Product Id: *** Transformation unclear
+     41. Description: LIBBYS PUMPKIN
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.79
+38. detailedTransactionData 5:
+     40. Product Id: *** Transformation unclear
+     41. Description: FRANKS CHILI SCE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.49
+38. detailedTransactionData 6:
+     40. Product Id: *** Transformation unclear
+     41. Description: FRANKS CHILI SCE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.49
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.09
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.03
+     iv. Discount Amount: 0.09
+     v. Discount Description: SMUCKERS JELLY
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.49
+47. Ext Dollar Amount: 3.0
+48. Return Amount: 3.0
+49. Item Discounts
+     iii. Discount Percent: 0.14
+     iv. Discount Amount: 0.49
+     v. Discount Description: FRANKS CHILI SCE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.49
+47. Ext Dollar Amount: 3.0
+48. Return Amount: 3.0
+49. Item Discounts
+     iii. Discount Percent: 0.14
+     iv. Discount Amount: 0.49
+     v. Discount Description: FRANKS CHILI SCE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.0
+47. Ext Dollar Amount: -1.0
+48. Return Amount: -1.0
+49. Item Discounts
+     iii. Discount Percent: 0.14
+     iv. Discount Amount: 1.00
+     v. Discount Description: MFR COUPON SAVINGS
+     vi. Discount Reason Code: MC
+     viii. PrintLine: -F
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.75
+50. Item Tax 2:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.69
+50. Item Tax 3:
+     iii. Tax Amount: 0.05
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 4:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.79
+50. Item Tax 5:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.0
+50. Item Tax 6:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.0
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 13.00
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.07
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 13.00 - 0.27 = 12.73
+     ii. Discount Total: 2.21
+     iii. Discount Total Amount: 12.73
+     iv. Total Amount: 13.00
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 19              
+*******************************************************************
+4. Transaction Date: 2021-01-13
+5. Transaction Time: 09:58:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 12.47
+36. Items Soldt: 14.94
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+38. detailedTransactionData 3:
+     40. Product Id: *** Transformation unclear
+     41. Description: SMUCKERS JELLY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.59
+38. detailedTransactionData 4:
+     40. Product Id: *** Transformation unclear
+     41. Description: LIBBYS PUMPKIN
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.79
+38. detailedTransactionData 5:
+     40. Product Id: *** Transformation unclear
+     41. Description: FRANKS CHILI SCE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.49
+38. detailedTransactionData 6:
+     40. Product Id: *** Transformation unclear
+     41. Description: FRANKS CHILI SCE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.49
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.09
+47. Ext Dollar Amount: 0.8
+48. Return Amount: 0.8
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.09
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.09
+47. Ext Dollar Amount: 0.8
+48. Return Amount: 0.8
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.09
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.17
+47. Ext Dollar Amount: 1.52
+48. Return Amount: 1.52
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.17
+     v. Discount Description: LFS MANDARINS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.17
+47. Ext Dollar Amount: 1.52
+48. Return Amount: 1.52
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.17
+     v. Discount Description: LFS MANDARINS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.09
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.03
+     iv. Discount Amount: 0.09
+     v. Discount Description: SMUCKERS JELLY
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.49
+47. Ext Dollar Amount: 3.0
+48. Return Amount: 3.0
+49. Item Discounts
+     iii. Discount Percent: 0.14
+     iv. Discount Amount: 0.49
+     v. Discount Description: FRANKS CHILI SCE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.49
+47. Ext Dollar Amount: 3.0
+48. Return Amount: 3.0
+49. Item Discounts
+     iii. Discount Percent: 0.14
+     iv. Discount Amount: 0.49
+     v. Discount Description: FRANKS CHILI SCE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.0
+47. Ext Dollar Amount: -1.0
+48. Return Amount: -1.0
+49. Item Discounts
+     iii. Discount Percent: 0.14
+     iv. Discount Amount: 1.00
+     v. Discount Description: MFR COUPON SAVINGS
+     vi. Discount Reason Code: MC
+     viii. PrintLine: -F
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.8
+50. Item Tax 2:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.52
+50. Item Tax 3:
+     iii. Tax Amount: 0.05
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 4:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.79
+50. Item Tax 5:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.0
+50. Item Tax 6:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.0
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 12.47
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.07
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 12.47 - 0.26 = 12.21
+     ii. Discount Total: 2.73
+     iii. Discount Total Amount: 12.21
+     iv. Total Amount: 12.47
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 23              
+*******************************************************************
+4. Transaction Date: 2021-01-08
+5. Transaction Time: 11:51:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 14.10
+36. Items Soldt: 14.94
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+38. detailedTransactionData 3:
+     40. Product Id: *** Transformation unclear
+     41. Description: SMUCKERS JELLY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.59
+38. detailedTransactionData 4:
+     40. Product Id: *** Transformation unclear
+     41. Description: LIBBYS PUMPKIN
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.79
+38. detailedTransactionData 5:
+     40. Product Id: *** Transformation unclear
+     41. Description: FRANKS CHILI SCE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.49
+38. detailedTransactionData 6:
+     40. Product Id: *** Transformation unclear
+     41. Description: FRANKS CHILI SCE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.49
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.0
+47. Ext Dollar Amount: -1.0
+48. Return Amount: -1.0
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 1.00
+     v. Discount Description: MFR COUPON SAVINGS
+     vi. Discount Reason Code: MC
+     viii. PrintLine: -F
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.75
+50. Item Tax 2:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.52
+50. Item Tax 3:
+     iii. Tax Amount: 0.05
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 4:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.79
+50. Item Tax 5:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.0
+50. Item Tax 6:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.0
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 14.10
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.07
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 14.10 - 0.30 = 13.80
+     ii. Discount Total: 1.14
+     iii. Discount Total Amount: 13.80
+     iv. Total Amount: 14.10
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 27              
+*******************************************************************
+4. Transaction Date: 2021-01-08
+5. Transaction Time: 11:51:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 14.10
+36. Items Soldt: 14.94
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+38. detailedTransactionData 3:
+     40. Product Id: *** Transformation unclear
+     41. Description: SMUCKERS JELLY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.59
+38. detailedTransactionData 4:
+     40. Product Id: *** Transformation unclear
+     41. Description: LIBBYS PUMPKIN
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.79
+38. detailedTransactionData 5:
+     40. Product Id: *** Transformation unclear
+     41. Description: FRANKS CHILI SCE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.49
+38. detailedTransactionData 6:
+     40. Product Id: *** Transformation unclear
+     41. Description: FRANKS CHILI SCE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.49
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.0
+47. Ext Dollar Amount: -1.0
+48. Return Amount: -1.0
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 1.00
+     v. Discount Description: MFR COUPON SAVINGS
+     vi. Discount Reason Code: MC
+     viii. PrintLine: -F
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.75
+50. Item Tax 2:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.52
+50. Item Tax 3:
+     iii. Tax Amount: 0.05
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 4:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.79
+50. Item Tax 5:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.0
+50. Item Tax 6:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.0
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 14.10
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.07
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 14.10 - 0.30 = 13.80
+     ii. Discount Total: 1.14
+     iii. Discount Total Amount: 13.80
+     iv. Total Amount: 14.10
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 31              
+*******************************************************************
+4. Transaction Date: 2021-01-13
+5. Transaction Time: 11:55:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 2.49
+36. Items Soldt: 2.58
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.75
+50. Item Tax 2:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.52
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 2.49
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.03
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 2.49 - 0.05 = 2.44
+     ii. Discount Total: .14
+     iii. Discount Total Amount: 2.44
+     iv. Total Amount: 2.49
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 35              
+*******************************************************************
+4. Transaction Date: 2021-01-13
+5. Transaction Time: 11:55:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 2.49
+36. Items Soldt: 2.58
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.75
+50. Item Tax 2:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.52
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 2.49
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.03
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 2.49 - 0.05 = 2.44
+     ii. Discount Total: .14
+     iii. Discount Total Amount: 2.44
+     iv. Total Amount: 2.49
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 39              
+*******************************************************************
+4. Transaction Date: 2021-01-13
+5. Transaction Time: 11:55:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 2.49
+36. Items Soldt: 2.58
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.75
+50. Item Tax 2:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.52
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 2.49
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.03
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 2.49 - 0.05 = 2.44
+     ii. Discount Total: .14
+     iii. Discount Total Amount: 2.44
+     iv. Total Amount: 2.49
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 43              
+*******************************************************************
+4. Transaction Date: 2021-01-13
+5. Transaction Time: 11:55:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 2.49
+36. Items Soldt: 2.58
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.75
+50. Item Tax 2:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.52
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 2.49
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.03
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 2.49 - 0.05 = 2.44
+     ii. Discount Total: .14
+     iii. Discount Total Amount: 2.44
+     iv. Total Amount: 2.49
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 47              
+*******************************************************************
+4. Transaction Date: 2021-01-13
+5. Transaction Time: 11:55:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 2.49
+36. Items Soldt: 2.58
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.75
+50. Item Tax 2:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.52
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 2.49
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.03
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 2.49 - 0.05 = 2.44
+     ii. Discount Total: .14
+     iii. Discount Total Amount: 2.44
+     iv. Total Amount: 2.49
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 51              
+*******************************************************************
+4. Transaction Date: 2021-01-13
+5. Transaction Time: 11:55:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 2.49
+36. Items Soldt: 2.58
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.75
+50. Item Tax 2:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.52
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 2.49
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.03
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 2.49 - 0.05 = 2.44
+     ii. Discount Total: .14
+     iii. Discount Total Amount: 2.44
+     iv. Total Amount: 2.49
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 55              
+*******************************************************************
+4. Transaction Date: 2021-01-13
+5. Transaction Time: 11:56:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 4.80
+36. Items Soldt: 5.37
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+38. detailedTransactionData 3:
+     40. Product Id: *** Transformation unclear
+     41. Description: LIBBYS PUMPKIN
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.79
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.09
+47. Ext Dollar Amount: 0.8
+48. Return Amount: 0.8
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.09
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.09
+47. Ext Dollar Amount: 0.8
+48. Return Amount: 0.8
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.09
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.17
+47. Ext Dollar Amount: 1.52
+48. Return Amount: 1.52
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.17
+     v. Discount Description: LFS MANDARINS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.17
+47. Ext Dollar Amount: 1.52
+48. Return Amount: 1.52
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.17
+     v. Discount Description: LFS MANDARINS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.8
+50. Item Tax 2:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.52
+50. Item Tax 3:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.79
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 4.80
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.06
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 4.80 - 0.09 = 4.71
+     ii. Discount Total: .66
+     iii. Discount Total Amount: 4.71
+     iv. Total Amount: 4.80
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 59              
+*******************************************************************
+4. Transaction Date: 2021-01-13
+5. Transaction Time: 11:55:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 2.49
+36. Items Soldt: 2.58
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.75
+50. Item Tax 2:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.52
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 2.49
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.03
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 2.49 - 0.05 = 2.44
+     ii. Discount Total: .14
+     iii. Discount Total Amount: 2.44
+     iv. Total Amount: 2.49
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 63              
+*******************************************************************
+4. Transaction Date: 2021-01-13
+5. Transaction Time: 11:56:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 4.80
+36. Items Soldt: 5.37
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+38. detailedTransactionData 3:
+     40. Product Id: *** Transformation unclear
+     41. Description: LIBBYS PUMPKIN
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.79
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.09
+47. Ext Dollar Amount: 0.8
+48. Return Amount: 0.8
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.09
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.09
+47. Ext Dollar Amount: 0.8
+48. Return Amount: 0.8
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.09
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.17
+47. Ext Dollar Amount: 1.52
+48. Return Amount: 1.52
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.17
+     v. Discount Description: LFS MANDARINS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.17
+47. Ext Dollar Amount: 1.52
+48. Return Amount: 1.52
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.17
+     v. Discount Description: LFS MANDARINS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.8
+50. Item Tax 2:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.52
+50. Item Tax 3:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.79
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 4.80
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.06
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 4.80 - 0.09 = 4.71
+     ii. Discount Total: .66
+     iii. Discount Total Amount: 4.71
+     iv. Total Amount: 4.80
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 67              
+*******************************************************************
+4. Transaction Date: 2021-01-13
+5. Transaction Time: 11:56:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 4.80
+36. Items Soldt: 5.37
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+38. detailedTransactionData 3:
+     40. Product Id: *** Transformation unclear
+     41. Description: LIBBYS PUMPKIN
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.79
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.09
+47. Ext Dollar Amount: 0.8
+48. Return Amount: 0.8
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.09
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.09
+47. Ext Dollar Amount: 0.8
+48. Return Amount: 0.8
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.09
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.17
+47. Ext Dollar Amount: 1.52
+48. Return Amount: 1.52
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.17
+     v. Discount Description: LFS MANDARINS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.17
+47. Ext Dollar Amount: 1.52
+48. Return Amount: 1.52
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.17
+     v. Discount Description: LFS MANDARINS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.8
+50. Item Tax 2:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.52
+50. Item Tax 3:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.79
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 4.80
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.06
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 4.80 - 0.09 = 4.71
+     ii. Discount Total: .66
+     iii. Discount Total Amount: 4.71
+     iv. Total Amount: 4.80
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 71              
+*******************************************************************
+4. Transaction Date: 2021-01-13
+5. Transaction Time: 11:55:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 2.49
+36. Items Soldt: 2.58
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.75
+50. Item Tax 2:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.52
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 2.49
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.03
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 2.49 - 0.05 = 2.44
+     ii. Discount Total: .14
+     iii. Discount Total Amount: 2.44
+     iv. Total Amount: 2.49
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 75              
+*******************************************************************
+4. Transaction Date: 2021-01-14
+5. Transaction Time: 12:41:00
+13. Address 1: *** Not found
+14. City: *** Not found
+15. State Code: *** Not found
+16. Store Zip: *** Not found
+19. Store Phone Number: *** Not found
+36. Total Amount: 2.49
+36. Items Soldt: 2.58
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.75
+50. Item Tax 2:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.52
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 2.49
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.03
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 2.49 - 0.05 = 2.44
+     ii. Discount Total: .14
+     iii. Discount Total Amount: 2.44
+     iv. Total Amount: 2.49
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 79              
+*******************************************************************
+4. Transaction Date: 2021-01-14
+5. Transaction Time: 12:41:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 6.77
+36. Items Soldt: 7.07
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: SMUCKERS JELLY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.59
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: LIBBYS PUMPKIN
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.79
+38. detailedTransactionData 3:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS MANDARINS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.69
+46. Discount Dollar Amount: 0.09
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.03
+     iv. Discount Amount: 0.09
+     v. Discount Description: SMUCKERS JELLY
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.17
+47. Ext Dollar Amount: 1.52
+48. Return Amount: 1.52
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.17
+     v. Discount Description: LFS MANDARINS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.17
+47. Ext Dollar Amount: 1.52
+48. Return Amount: 1.52
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.17
+     v. Discount Description: LFS MANDARINS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+50. Item Tax 1:
+     iii. Tax Amount: 0.05
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 2:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.79
+50. Item Tax 3:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.52
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 6.77
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.03
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 6.77 - 0.13 = 6.64
+     ii. Discount Total: .43
+     iii. Discount Total Amount: 6.64
+     iv. Total Amount: 6.77
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 83              
+*******************************************************************
+4. Transaction Date: 2021-01-14
+5. Transaction Time: 17:08:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 156.10
+36. Items Soldt: 206.0200000000001
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: DU BOIS PINOT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 19.99
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: BIN 50 SHIRAZ
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 8.99
+38. detailedTransactionData 3:
+     40. Product Id: *** Transformation unclear
+     41. Description: YOPLAIT YOGURT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.65
+38. detailedTransactionData 4:
+     40. Product Id: *** Transformation unclear
+     41. Description: YOPLAIT YOGURT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.65
+38. detailedTransactionData 5:
+     40. Product Id: *** Transformation unclear
+     41. Description: YOPLAIT YOGURT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.65
+38. detailedTransactionData 6:
+     40. Product Id: *** Transformation unclear
+     41. Description: YOPLAIT YOGURT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.65
+38. detailedTransactionData 7:
+     40. Product Id: *** Transformation unclear
+     41. Description: YOPLAIT YOGURT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.65
+38. detailedTransactionData 8:
+     40. Product Id: *** Transformation unclear
+     41. Description: GREEN CHILE BUR
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.5
+38. detailedTransactionData 9:
+     40. Product Id: *** Transformation unclear
+     41. Description: GREEN CHILE BUR
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.5
+38. detailedTransactionData 10:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD YGRT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.39
+38. detailedTransactionData 11:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD KIDS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.39
+38. detailedTransactionData 12:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD YGRT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.59
+38. detailedTransactionData 13:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD YGRT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.59
+38. detailedTransactionData 14:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNYF YOGURT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.59
+38. detailedTransactionData 15:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD YGRT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.59
+38. detailedTransactionData 16:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNFELD YGRT 6PK
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.39
+38. detailedTransactionData 17:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNFELD YGRT 6PK
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.39
+38. detailedTransactionData 18:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNFELD YGRT POU
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.39
+38. detailedTransactionData 19:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD YGRT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 20:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD WHOLE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 21:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD WHOLE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 22:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNFELD YGRT POU
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 23:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNFELD YGRT POU
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 24:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNFELD YGRT SQZ
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 25:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD YOTOT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 26:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO FR TST STCK
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.85
+38. detailedTransactionData 27:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO PANCAKES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.85
+38. detailedTransactionData 28:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO PANCAKES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.85
+38. detailedTransactionData 29:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO PANCAKES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.85
+38. detailedTransactionData 30:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO FRN TOAST
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.19
+38. detailedTransactionData 31:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO FRN TOAST
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.19
+38. detailedTransactionData 32:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO WAFFLES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.69
+38. detailedTransactionData 33:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO WAFFLES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.69
+38. detailedTransactionData 34:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO WAFFLES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.69
+38. detailedTransactionData 35:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO WAFFLES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.69
+38. detailedTransactionData 36:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO WAFFLES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.69
+38. detailedTransactionData 37:
+     40. Product Id: *** Transformation unclear
+     41. Description: KASHI WAFFLES 7
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.89
+38. detailedTransactionData 38:
+     40. Product Id: *** Transformation unclear
+     41. Description: KELLOGGS WAFFLES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.69
+38. detailedTransactionData 39:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 40:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 41:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 42:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 43:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 44:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 45:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY OJ LIGHT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 46:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY OJ LIGHT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 47:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY ORANGE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 48:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 49:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 50:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 51:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 52:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 53:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 54:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY SMOOTHIE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 55:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY SMOOTHIE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 56:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY SMOOTHIE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+46. Discount Dollar Amount: 9.5
+47. Ext Dollar Amount: 10.489999999999998
+48. Return Amount: 10.489999999999998
+49. Item Discounts
+     iii. Discount Percent: 0.48
+     iv. Discount Amount: 9.50
+     v. Discount Description: DU BOIS PINOT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -T
+46. Discount Dollar Amount: 0.5
+47. Ext Dollar Amount: 19.49
+48. Return Amount: 19.49
+49. Item Discounts
+     iii. Discount Percent: 0.03
+     iv. Discount Amount: 0.50
+     v. Discount Description: DU BOIS PINOT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -T
+46. Discount Dollar Amount: 3.49
+47. Ext Dollar Amount: 5.5
+48. Return Amount: 5.5
+49. Item Discounts
+     iii. Discount Percent: 0.39
+     iv. Discount Amount: 3.49
+     v. Discount Description: BIN 50 SHIRAZ
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -T
+46. Discount Dollar Amount: 0.5
+47. Ext Dollar Amount: 2.0
+48. Return Amount: 2.0
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.50
+     v. Discount Description: GREEN CHILE BUR
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.5
+47. Ext Dollar Amount: 2.0
+48. Return Amount: 2.0
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.50
+     v. Discount Description: GREEN CHILE BUR
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.89
+47. Ext Dollar Amount: 3.4999999999999996
+48. Return Amount: 3.4999999999999996
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.89
+     v. Discount Description: STONYFIELD YGRT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.89
+47. Ext Dollar Amount: 3.4999999999999996
+48. Return Amount: 3.4999999999999996
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.89
+     v. Discount Description: STONYFIELD KIDS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.09
+47. Ext Dollar Amount: 3.5
+48. Return Amount: 3.5
+49. Item Discounts
+     iii. Discount Percent: 0.24
+     iv. Discount Amount: 1.09
+     v. Discount Description: STONYFIELD YGRT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.09
+47. Ext Dollar Amount: 3.5
+48. Return Amount: 3.5
+49. Item Discounts
+     iii. Discount Percent: 0.24
+     iv. Discount Amount: 1.09
+     v. Discount Description: STONYFIELD YGRT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.09
+47. Ext Dollar Amount: 3.5
+48. Return Amount: 3.5
+49. Item Discounts
+     iii. Discount Percent: 0.24
+     iv. Discount Amount: 1.09
+     v. Discount Description: STNYF YOGURT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.09
+47. Ext Dollar Amount: 3.5
+48. Return Amount: 3.5
+49. Item Discounts
+     iii. Discount Percent: 0.24
+     iv. Discount Amount: 1.09
+     v. Discount Description: STONYFIELD YGRT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.89
+47. Ext Dollar Amount: 3.4999999999999996
+48. Return Amount: 3.4999999999999996
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.89
+     v. Discount Description: STNFELD YGRT 6PK
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.89
+47. Ext Dollar Amount: 3.4999999999999996
+48. Return Amount: 3.4999999999999996
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.89
+     v. Discount Description: STNFELD YGRT 6PK
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.89
+47. Ext Dollar Amount: 3.4999999999999996
+48. Return Amount: 3.4999999999999996
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.89
+     v. Discount Description: STNFELD YGRT POU
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.3
+47. Ext Dollar Amount: 1.25
+48. Return Amount: 1.25
+49. Item Discounts
+     iii. Discount Percent: 0.19
+     iv. Discount Amount: 0.30
+     v. Discount Description: STONYFIELD WHOLE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.3
+47. Ext Dollar Amount: 1.25
+48. Return Amount: 1.25
+49. Item Discounts
+     iii. Discount Percent: 0.19
+     iv. Discount Amount: 0.30
+     v. Discount Description: STONYFIELD WHOLE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.3
+47. Ext Dollar Amount: 1.25
+48. Return Amount: 1.25
+49. Item Discounts
+     iii. Discount Percent: 0.19
+     iv. Discount Amount: 0.30
+     v. Discount Description: STNFELD YGRT POU
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.3
+47. Ext Dollar Amount: 1.25
+48. Return Amount: 1.25
+49. Item Discounts
+     iii. Discount Percent: 0.19
+     iv. Discount Amount: 0.30
+     v. Discount Description: STNFELD YGRT POU
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.3
+47. Ext Dollar Amount: 1.25
+48. Return Amount: 1.25
+49. Item Discounts
+     iii. Discount Percent: 0.19
+     iv. Discount Amount: 0.30
+     v. Discount Description: STNFELD YGRT SQZ
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.3
+47. Ext Dollar Amount: 1.25
+48. Return Amount: 1.25
+49. Item Discounts
+     iii. Discount Percent: 0.19
+     iv. Discount Amount: 0.30
+     v. Discount Description: STONYFIELD YOTOT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.35
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.12
+     iv. Discount Amount: 0.35
+     v. Discount Description: EGGO FR TST STCK
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.35
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.12
+     iv. Discount Amount: 0.35
+     v. Discount Description: EGGO PANCAKES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.35
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.12
+     iv. Discount Amount: 0.35
+     v. Discount Description: EGGO PANCAKES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.35
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.12
+     iv. Discount Amount: 0.35
+     v. Discount Description: EGGO PANCAKES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 3.0000000000000004
+48. Return Amount: 3.0000000000000004
+49. Item Discounts
+     iii. Discount Percent: 0.28
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO FRN TOAST
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 3.0000000000000004
+48. Return Amount: 3.0000000000000004
+49. Item Discounts
+     iii. Discount Percent: 0.28
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO FRN TOAST
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.32
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO WAFFLES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.32
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO WAFFLES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.32
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO WAFFLES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.32
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO WAFFLES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.32
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO WAFFLES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.89
+47. Ext Dollar Amount: 3.0
+48. Return Amount: 3.0
+49. Item Discounts
+     iii. Discount Percent: 0.23
+     iv. Discount Amount: 0.89
+     v. Discount Description: KASHI WAFFLES 7
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.32
+     iv. Discount Amount: 1.19
+     v. Discount Description: KELLOGGS WAFFLES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY OJ LIGHT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY OJ LIGHT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY ORANGE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY SMOOTHIE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY SMOOTHIE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY SMOOTHIE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+50. Item Tax 1:
+     iii. Tax Amount: 0.40
+     iv. Tax Flag: T
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 19.49
+50. Item Tax 2:
+     iii. Tax Amount: 0.18
+     iv. Tax Flag: T
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 5.5
+50. Item Tax 3:
+     iii. Tax Amount: 0.01
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.65
+50. Item Tax 4:
+     iii. Tax Amount: 0.01
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.65
+50. Item Tax 5:
+     iii. Tax Amount: 0.01
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.65
+50. Item Tax 6:
+     iii. Tax Amount: 0.01
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.65
+50. Item Tax 7:
+     iii. Tax Amount: 0.01
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.65
+50. Item Tax 8:
+     iii. Tax Amount: 0.05
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.0
+50. Item Tax 9:
+     iii. Tax Amount: 0.05
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.0
+50. Item Tax 10:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.5
+50. Item Tax 11:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.4999999999999996
+50. Item Tax 12:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.5
+50. Item Tax 13:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.5
+50. Item Tax 14:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.5
+50. Item Tax 15:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.5
+50. Item Tax 16:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.4999999999999996
+50. Item Tax 17:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.4999999999999996
+50. Item Tax 18:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 19:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.5
+50. Item Tax 20:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 21:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 22:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 23:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 24:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 25:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 26:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 27:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 28:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 29:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 30:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.0000000000000004
+50. Item Tax 31:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.0000000000000004
+50. Item Tax 32:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 33:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 34:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 35:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 36:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 37:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.0
+50. Item Tax 38:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 39:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 40:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 41:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 42:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 43:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 44:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 45:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 46:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 47:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 48:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 49:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 50:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 51:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 52:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 53:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 54:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 55:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 56:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 156.10
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.08
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 156.10 - 2.74 = 153.36
+     ii. Discount Total: 53.74
+     iii. Discount Total Amount: 153.36
+     iv. Total Amount: 156.10
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 87              
+*******************************************************************
+4. Transaction Date: 2021-01-14
+5. Transaction Time: 16:36:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: .58
+36. Items Soldt: 0.89
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.09
+47. Ext Dollar Amount: 0.8
+48. Return Amount: 0.8
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.09
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.09
+47. Ext Dollar Amount: 0.8
+48. Return Amount: 0.8
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.09
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.8
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: .58
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.02
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: .58 - 0.01 = 0.57
+     ii. Discount Total: .32
+     iii. Discount Total Amount: 0.57
+     iv. Total Amount: .58
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 91              
+*******************************************************************
+4. Transaction Date: 2021-01-14
+5. Transaction Time: 16:40:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: .58
+36. Items Soldt: 0.89
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: LFS KIDNEY BEANS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.89
+46. Discount Dollar Amount: 0.14
+47. Ext Dollar Amount: 0.75
+48. Return Amount: 0.75
+49. Item Discounts
+     iii. Discount Percent: 0.16
+     iv. Discount Amount: 0.14
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.09
+47. Ext Dollar Amount: 0.8
+48. Return Amount: 0.8
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.09
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.09
+47. Ext Dollar Amount: 0.8
+48. Return Amount: 0.8
+49. Item Discounts
+     iii. Discount Percent: 0.1
+     iv. Discount Amount: 0.09
+     v. Discount Description: LFS KIDNEY BEANS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+50. Item Tax 1:
+     iii. Tax Amount: 0.02
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.8
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: .58
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.02
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: .58 - 0.01 = 0.57
+     ii. Discount Total: .32
+     iii. Discount Total Amount: 0.57
+     iv. Total Amount: .58
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 95              
+*******************************************************************
+4. Transaction Date: 2021-01-14
+5. Transaction Time: 16:56:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 161.14
+36. Items Soldt: 206.0200000000001
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: DU BOIS PINOT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 19.99
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: BIN 50 SHIRAZ
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 8.99
+38. detailedTransactionData 3:
+     40. Product Id: *** Transformation unclear
+     41. Description: YOPLAIT YOGURT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.65
+38. detailedTransactionData 4:
+     40. Product Id: *** Transformation unclear
+     41. Description: YOPLAIT YOGURT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.65
+38. detailedTransactionData 5:
+     40. Product Id: *** Transformation unclear
+     41. Description: YOPLAIT YOGURT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.65
+38. detailedTransactionData 6:
+     40. Product Id: *** Transformation unclear
+     41. Description: YOPLAIT YOGURT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.65
+38. detailedTransactionData 7:
+     40. Product Id: *** Transformation unclear
+     41. Description: YOPLAIT YOGURT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.65
+38. detailedTransactionData 8:
+     40. Product Id: *** Transformation unclear
+     41. Description: GREEN CHILE BUR
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.5
+38. detailedTransactionData 9:
+     40. Product Id: *** Transformation unclear
+     41. Description: GREEN CHILE BUR
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.5
+38. detailedTransactionData 10:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD YGRT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.39
+38. detailedTransactionData 11:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD KIDS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.39
+38. detailedTransactionData 12:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD YGRT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.59
+38. detailedTransactionData 13:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD YGRT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.59
+38. detailedTransactionData 14:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNYF YOGURT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.59
+38. detailedTransactionData 15:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD YGRT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.59
+38. detailedTransactionData 16:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNFELD YGRT 6PK
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.39
+38. detailedTransactionData 17:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNFELD YGRT 6PK
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.39
+38. detailedTransactionData 18:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNFELD YGRT POU
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.39
+38. detailedTransactionData 19:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD YGRT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 20:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD WHOLE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 21:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD WHOLE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 22:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNFELD YGRT POU
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 23:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNFELD YGRT POU
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 24:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNFELD YGRT SQZ
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 25:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD YOTOT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 26:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO FR TST STCK
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.85
+38. detailedTransactionData 27:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO PANCAKES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.85
+38. detailedTransactionData 28:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO PANCAKES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.85
+38. detailedTransactionData 29:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO PANCAKES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.85
+38. detailedTransactionData 30:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO FRN TOAST
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.19
+38. detailedTransactionData 31:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO FRN TOAST
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.19
+38. detailedTransactionData 32:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO WAFFLES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.69
+38. detailedTransactionData 33:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO WAFFLES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.69
+38. detailedTransactionData 34:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO WAFFLES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.69
+38. detailedTransactionData 35:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO WAFFLES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.69
+38. detailedTransactionData 36:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO WAFFLES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.69
+38. detailedTransactionData 37:
+     40. Product Id: *** Transformation unclear
+     41. Description: KASHI WAFFLES 7
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.89
+38. detailedTransactionData 38:
+     40. Product Id: *** Transformation unclear
+     41. Description: KELLOGGS WAFFLES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.69
+38. detailedTransactionData 39:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 40:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 41:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 42:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 43:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 44:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 45:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY OJ LIGHT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 46:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY OJ LIGHT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 47:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY ORANGE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 48:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 49:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 50:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 51:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 52:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 53:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 54:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY SMOOTHIE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 55:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY SMOOTHIE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 56:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY SMOOTHIE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+46. Discount Dollar Amount: 9.5
+47. Ext Dollar Amount: 10.489999999999998
+48. Return Amount: 10.489999999999998
+49. Item Discounts
+     iii. Discount Percent: 0.48
+     iv. Discount Amount: 9.50
+     v. Discount Description: DU BOIS PINOT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -T
+46. Discount Dollar Amount: 0.5
+47. Ext Dollar Amount: 19.49
+48. Return Amount: 19.49
+49. Item Discounts
+     iii. Discount Percent: 0.03
+     iv. Discount Amount: 0.50
+     v. Discount Description: DU BOIS PINOT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -T
+46. Discount Dollar Amount: 3.49
+47. Ext Dollar Amount: 5.5
+48. Return Amount: 5.5
+49. Item Discounts
+     iii. Discount Percent: 0.39
+     iv. Discount Amount: 3.49
+     v. Discount Description: BIN 50 SHIRAZ
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -T
+46. Discount Dollar Amount: 0.5
+47. Ext Dollar Amount: 2.0
+48. Return Amount: 2.0
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.50
+     v. Discount Description: GREEN CHILE BUR
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.5
+47. Ext Dollar Amount: 2.0
+48. Return Amount: 2.0
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.50
+     v. Discount Description: GREEN CHILE BUR
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.89
+47. Ext Dollar Amount: 3.4999999999999996
+48. Return Amount: 3.4999999999999996
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.89
+     v. Discount Description: STONYFIELD YGRT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.89
+47. Ext Dollar Amount: 3.4999999999999996
+48. Return Amount: 3.4999999999999996
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.89
+     v. Discount Description: STONYFIELD KIDS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.09
+47. Ext Dollar Amount: 3.5
+48. Return Amount: 3.5
+49. Item Discounts
+     iii. Discount Percent: 0.24
+     iv. Discount Amount: 1.09
+     v. Discount Description: STONYFIELD YGRT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.09
+47. Ext Dollar Amount: 3.5
+48. Return Amount: 3.5
+49. Item Discounts
+     iii. Discount Percent: 0.24
+     iv. Discount Amount: 1.09
+     v. Discount Description: STONYFIELD YGRT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.09
+47. Ext Dollar Amount: 3.5
+48. Return Amount: 3.5
+49. Item Discounts
+     iii. Discount Percent: 0.24
+     iv. Discount Amount: 1.09
+     v. Discount Description: STNYF YOGURT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.09
+47. Ext Dollar Amount: 3.5
+48. Return Amount: 3.5
+49. Item Discounts
+     iii. Discount Percent: 0.24
+     iv. Discount Amount: 1.09
+     v. Discount Description: STONYFIELD YGRT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.89
+47. Ext Dollar Amount: 3.4999999999999996
+48. Return Amount: 3.4999999999999996
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.89
+     v. Discount Description: STNFELD YGRT 6PK
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.89
+47. Ext Dollar Amount: 3.4999999999999996
+48. Return Amount: 3.4999999999999996
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.89
+     v. Discount Description: STNFELD YGRT 6PK
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.89
+47. Ext Dollar Amount: 3.4999999999999996
+48. Return Amount: 3.4999999999999996
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.89
+     v. Discount Description: STNFELD YGRT POU
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.3
+47. Ext Dollar Amount: 1.25
+48. Return Amount: 1.25
+49. Item Discounts
+     iii. Discount Percent: 0.19
+     iv. Discount Amount: 0.30
+     v. Discount Description: STONYFIELD WHOLE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.3
+47. Ext Dollar Amount: 1.25
+48. Return Amount: 1.25
+49. Item Discounts
+     iii. Discount Percent: 0.19
+     iv. Discount Amount: 0.30
+     v. Discount Description: STONYFIELD WHOLE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.3
+47. Ext Dollar Amount: 1.25
+48. Return Amount: 1.25
+49. Item Discounts
+     iii. Discount Percent: 0.19
+     iv. Discount Amount: 0.30
+     v. Discount Description: STNFELD YGRT POU
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.3
+47. Ext Dollar Amount: 1.25
+48. Return Amount: 1.25
+49. Item Discounts
+     iii. Discount Percent: 0.19
+     iv. Discount Amount: 0.30
+     v. Discount Description: STNFELD YGRT POU
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.3
+47. Ext Dollar Amount: 1.25
+48. Return Amount: 1.25
+49. Item Discounts
+     iii. Discount Percent: 0.19
+     iv. Discount Amount: 0.30
+     v. Discount Description: STNFELD YGRT SQZ
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.3
+47. Ext Dollar Amount: 1.25
+48. Return Amount: 1.25
+49. Item Discounts
+     iii. Discount Percent: 0.19
+     iv. Discount Amount: 0.30
+     v. Discount Description: STONYFIELD YOTOT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.35
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.12
+     iv. Discount Amount: 0.35
+     v. Discount Description: EGGO FR TST STCK
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.35
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.12
+     iv. Discount Amount: 0.35
+     v. Discount Description: EGGO PANCAKES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.35
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.12
+     iv. Discount Amount: 0.35
+     v. Discount Description: EGGO PANCAKES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.35
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.12
+     iv. Discount Amount: 0.35
+     v. Discount Description: EGGO PANCAKES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 3.0000000000000004
+48. Return Amount: 3.0000000000000004
+49. Item Discounts
+     iii. Discount Percent: 0.28
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO FRN TOAST
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 3.0000000000000004
+48. Return Amount: 3.0000000000000004
+49. Item Discounts
+     iii. Discount Percent: 0.28
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO FRN TOAST
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.32
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO WAFFLES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.32
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO WAFFLES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.32
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO WAFFLES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.32
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO WAFFLES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.32
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO WAFFLES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.89
+47. Ext Dollar Amount: 3.0
+48. Return Amount: 3.0
+49. Item Discounts
+     iii. Discount Percent: 0.23
+     iv. Discount Amount: 0.89
+     v. Discount Description: KASHI WAFFLES 7
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.32
+     iv. Discount Amount: 1.19
+     v. Discount Description: KELLOGGS WAFFLES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY OJ LIGHT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY OJ LIGHT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY ORANGE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY SMOOTHIE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY SMOOTHIE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY SMOOTHIE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+50. Item Tax 1:
+     iii. Tax Amount: 0.40
+     iv. Tax Flag: T
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 19.49
+50. Item Tax 2:
+     iii. Tax Amount: 0.18
+     iv. Tax Flag: T
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 5.5
+50. Item Tax 3:
+     iii. Tax Amount: 0.01
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.65
+50. Item Tax 4:
+     iii. Tax Amount: 0.01
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.65
+50. Item Tax 5:
+     iii. Tax Amount: 0.01
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.65
+50. Item Tax 6:
+     iii. Tax Amount: 0.01
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.65
+50. Item Tax 7:
+     iii. Tax Amount: 0.01
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.65
+50. Item Tax 8:
+     iii. Tax Amount: 0.05
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.0
+50. Item Tax 9:
+     iii. Tax Amount: 0.05
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.0
+50. Item Tax 10:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.5
+50. Item Tax 11:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.4999999999999996
+50. Item Tax 12:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.5
+50. Item Tax 13:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.5
+50. Item Tax 14:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.5
+50. Item Tax 15:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.5
+50. Item Tax 16:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.4999999999999996
+50. Item Tax 17:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.4999999999999996
+50. Item Tax 18:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 19:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.5
+50. Item Tax 20:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 21:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 22:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 23:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 24:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 25:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 26:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 27:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 28:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 29:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 30:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.0000000000000004
+50. Item Tax 31:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.0000000000000004
+50. Item Tax 32:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 33:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 34:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 35:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 36:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 37:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.0
+50. Item Tax 38:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 39:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 40:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 41:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 42:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 43:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 44:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 45:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 46:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 47:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 48:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 49:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 50:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 51:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 52:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 53:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 54:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 55:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 56:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 161.14
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.08
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 161.14 - 2.83 = 158.31
+     ii. Discount Total: 48.79
+     iii. Discount Total Amount: 158.31
+     iv. Total Amount: 161.14
+     v. Change: .00
+*******************************************************************
+                         TRANSACTION id: 99              
+*******************************************************************
+4. Transaction Date: 2021-01-14
+5. Transaction Time: 17:02:00
+13. Address 1: 120 4th Street SW, 1st Floor
+14. City: Hickory
+15. State Code: NC
+16. Store Zip: 28602
+19. Store Phone Number: 828-725-4100
+36. Total Amount: 161.14
+36. Items Soldt: 206.0200000000001
+38. detailedTransactionData 1:
+     40. Product Id: *** Transformation unclear
+     41. Description: DU BOIS PINOT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 19.99
+38. detailedTransactionData 2:
+     40. Product Id: *** Transformation unclear
+     41. Description: BIN 50 SHIRAZ
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 8.99
+38. detailedTransactionData 3:
+     40. Product Id: *** Transformation unclear
+     41. Description: YOPLAIT YOGURT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.65
+38. detailedTransactionData 4:
+     40. Product Id: *** Transformation unclear
+     41. Description: YOPLAIT YOGURT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.65
+38. detailedTransactionData 5:
+     40. Product Id: *** Transformation unclear
+     41. Description: YOPLAIT YOGURT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.65
+38. detailedTransactionData 6:
+     40. Product Id: *** Transformation unclear
+     41. Description: YOPLAIT YOGURT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.65
+38. detailedTransactionData 7:
+     40. Product Id: *** Transformation unclear
+     41. Description: YOPLAIT YOGURT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 0.65
+38. detailedTransactionData 8:
+     40. Product Id: *** Transformation unclear
+     41. Description: GREEN CHILE BUR
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.5
+38. detailedTransactionData 9:
+     40. Product Id: *** Transformation unclear
+     41. Description: GREEN CHILE BUR
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.5
+38. detailedTransactionData 10:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD YGRT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.39
+38. detailedTransactionData 11:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD KIDS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.39
+38. detailedTransactionData 12:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD YGRT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.59
+38. detailedTransactionData 13:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD YGRT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.59
+38. detailedTransactionData 14:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNYF YOGURT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.59
+38. detailedTransactionData 15:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD YGRT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.59
+38. detailedTransactionData 16:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNFELD YGRT 6PK
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.39
+38. detailedTransactionData 17:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNFELD YGRT 6PK
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.39
+38. detailedTransactionData 18:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNFELD YGRT POU
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.39
+38. detailedTransactionData 19:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD YGRT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 20:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD WHOLE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 21:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD WHOLE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 22:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNFELD YGRT POU
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 23:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNFELD YGRT POU
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 24:
+     40. Product Id: *** Transformation unclear
+     41. Description: STNFELD YGRT SQZ
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 25:
+     40. Product Id: *** Transformation unclear
+     41. Description: STONYFIELD YOTOT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 26:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO FR TST STCK
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.85
+38. detailedTransactionData 27:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO PANCAKES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.85
+38. detailedTransactionData 28:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO PANCAKES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.85
+38. detailedTransactionData 29:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO PANCAKES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 2.85
+38. detailedTransactionData 30:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO FRN TOAST
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.19
+38. detailedTransactionData 31:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO FRN TOAST
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 4.19
+38. detailedTransactionData 32:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO WAFFLES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.69
+38. detailedTransactionData 33:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO WAFFLES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.69
+38. detailedTransactionData 34:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO WAFFLES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.69
+38. detailedTransactionData 35:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO WAFFLES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.69
+38. detailedTransactionData 36:
+     40. Product Id: *** Transformation unclear
+     41. Description: EGGO WAFFLES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.69
+38. detailedTransactionData 37:
+     40. Product Id: *** Transformation unclear
+     41. Description: KASHI WAFFLES 7
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.89
+38. detailedTransactionData 38:
+     40. Product Id: *** Transformation unclear
+     41. Description: KELLOGGS WAFFLES
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.69
+38. detailedTransactionData 39:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 40:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 41:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 42:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 43:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 44:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 45:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY OJ LIGHT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 46:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY OJ LIGHT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 47:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY ORANGE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 48:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 49:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 50:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 51:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 52:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 53:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY JUICE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 54:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY SMOOTHIE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 55:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY SMOOTHIE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+38. detailedTransactionData 56:
+     40. Product Id: *** Transformation unclear
+     41. Description: SIMPLY SMOOTHIE
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 3.99
+46. Discount Dollar Amount: 9.5
+47. Ext Dollar Amount: 10.489999999999998
+48. Return Amount: 10.489999999999998
+49. Item Discounts
+     iii. Discount Percent: 0.48
+     iv. Discount Amount: 9.50
+     v. Discount Description: DU BOIS PINOT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -T
+46. Discount Dollar Amount: 0.5
+47. Ext Dollar Amount: 19.49
+48. Return Amount: 19.49
+49. Item Discounts
+     iii. Discount Percent: 0.03
+     iv. Discount Amount: 0.50
+     v. Discount Description: DU BOIS PINOT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -T
+46. Discount Dollar Amount: 3.49
+47. Ext Dollar Amount: 5.5
+48. Return Amount: 5.5
+49. Item Discounts
+     iii. Discount Percent: 0.39
+     iv. Discount Amount: 3.49
+     v. Discount Description: BIN 50 SHIRAZ
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -T
+46. Discount Dollar Amount: 0.5
+47. Ext Dollar Amount: 2.0
+48. Return Amount: 2.0
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.50
+     v. Discount Description: GREEN CHILE BUR
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.5
+47. Ext Dollar Amount: 2.0
+48. Return Amount: 2.0
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.50
+     v. Discount Description: GREEN CHILE BUR
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.89
+47. Ext Dollar Amount: 3.4999999999999996
+48. Return Amount: 3.4999999999999996
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.89
+     v. Discount Description: STONYFIELD YGRT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.89
+47. Ext Dollar Amount: 3.4999999999999996
+48. Return Amount: 3.4999999999999996
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.89
+     v. Discount Description: STONYFIELD KIDS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.09
+47. Ext Dollar Amount: 3.5
+48. Return Amount: 3.5
+49. Item Discounts
+     iii. Discount Percent: 0.24
+     iv. Discount Amount: 1.09
+     v. Discount Description: STONYFIELD YGRT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.09
+47. Ext Dollar Amount: 3.5
+48. Return Amount: 3.5
+49. Item Discounts
+     iii. Discount Percent: 0.24
+     iv. Discount Amount: 1.09
+     v. Discount Description: STONYFIELD YGRT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.09
+47. Ext Dollar Amount: 3.5
+48. Return Amount: 3.5
+49. Item Discounts
+     iii. Discount Percent: 0.24
+     iv. Discount Amount: 1.09
+     v. Discount Description: STNYF YOGURT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.09
+47. Ext Dollar Amount: 3.5
+48. Return Amount: 3.5
+49. Item Discounts
+     iii. Discount Percent: 0.24
+     iv. Discount Amount: 1.09
+     v. Discount Description: STONYFIELD YGRT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.89
+47. Ext Dollar Amount: 3.4999999999999996
+48. Return Amount: 3.4999999999999996
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.89
+     v. Discount Description: STNFELD YGRT 6PK
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.89
+47. Ext Dollar Amount: 3.4999999999999996
+48. Return Amount: 3.4999999999999996
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.89
+     v. Discount Description: STNFELD YGRT 6PK
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.89
+47. Ext Dollar Amount: 3.4999999999999996
+48. Return Amount: 3.4999999999999996
+49. Item Discounts
+     iii. Discount Percent: 0.2
+     iv. Discount Amount: 0.89
+     v. Discount Description: STNFELD YGRT POU
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.3
+47. Ext Dollar Amount: 1.25
+48. Return Amount: 1.25
+49. Item Discounts
+     iii. Discount Percent: 0.19
+     iv. Discount Amount: 0.30
+     v. Discount Description: STONYFIELD WHOLE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.3
+47. Ext Dollar Amount: 1.25
+48. Return Amount: 1.25
+49. Item Discounts
+     iii. Discount Percent: 0.19
+     iv. Discount Amount: 0.30
+     v. Discount Description: STONYFIELD WHOLE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.3
+47. Ext Dollar Amount: 1.25
+48. Return Amount: 1.25
+49. Item Discounts
+     iii. Discount Percent: 0.19
+     iv. Discount Amount: 0.30
+     v. Discount Description: STNFELD YGRT POU
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.3
+47. Ext Dollar Amount: 1.25
+48. Return Amount: 1.25
+49. Item Discounts
+     iii. Discount Percent: 0.19
+     iv. Discount Amount: 0.30
+     v. Discount Description: STNFELD YGRT POU
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.3
+47. Ext Dollar Amount: 1.25
+48. Return Amount: 1.25
+49. Item Discounts
+     iii. Discount Percent: 0.19
+     iv. Discount Amount: 0.30
+     v. Discount Description: STNFELD YGRT SQZ
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.3
+47. Ext Dollar Amount: 1.25
+48. Return Amount: 1.25
+49. Item Discounts
+     iii. Discount Percent: 0.19
+     iv. Discount Amount: 0.30
+     v. Discount Description: STONYFIELD YOTOT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.35
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.12
+     iv. Discount Amount: 0.35
+     v. Discount Description: EGGO FR TST STCK
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.35
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.12
+     iv. Discount Amount: 0.35
+     v. Discount Description: EGGO PANCAKES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.35
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.12
+     iv. Discount Amount: 0.35
+     v. Discount Description: EGGO PANCAKES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.35
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.12
+     iv. Discount Amount: 0.35
+     v. Discount Description: EGGO PANCAKES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 3.0000000000000004
+48. Return Amount: 3.0000000000000004
+49. Item Discounts
+     iii. Discount Percent: 0.28
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO FRN TOAST
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 3.0000000000000004
+48. Return Amount: 3.0000000000000004
+49. Item Discounts
+     iii. Discount Percent: 0.28
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO FRN TOAST
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.32
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO WAFFLES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.32
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO WAFFLES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.32
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO WAFFLES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.32
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO WAFFLES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.32
+     iv. Discount Amount: 1.19
+     v. Discount Description: EGGO WAFFLES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.89
+47. Ext Dollar Amount: 3.0
+48. Return Amount: 3.0
+49. Item Discounts
+     iii. Discount Percent: 0.23
+     iv. Discount Amount: 0.89
+     v. Discount Description: KASHI WAFFLES 7
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 1.19
+47. Ext Dollar Amount: 2.5
+48. Return Amount: 2.5
+49. Item Discounts
+     iii. Discount Percent: 0.32
+     iv. Discount Amount: 1.19
+     v. Discount Description: KELLOGGS WAFFLES
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY OJ LIGHT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY OJ LIGHT
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY ORANGE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY JUICE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY SMOOTHIE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY SMOOTHIE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.66
+47. Ext Dollar Amount: 3.33
+48. Return Amount: 3.33
+49. Item Discounts
+     iii. Discount Percent: 0.17
+     iv. Discount Amount: 0.66
+     v. Discount Description: SIMPLY SMOOTHIE
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+50. Item Tax 1:
+     iii. Tax Amount: 0.40
+     iv. Tax Flag: T
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 19.49
+50. Item Tax 2:
+     iii. Tax Amount: 0.18
+     iv. Tax Flag: T
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 5.5
+50. Item Tax 3:
+     iii. Tax Amount: 0.01
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.65
+50. Item Tax 4:
+     iii. Tax Amount: 0.01
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.65
+50. Item Tax 5:
+     iii. Tax Amount: 0.01
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.65
+50. Item Tax 6:
+     iii. Tax Amount: 0.01
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.65
+50. Item Tax 7:
+     iii. Tax Amount: 0.01
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 0.65
+50. Item Tax 8:
+     iii. Tax Amount: 0.05
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.0
+50. Item Tax 9:
+     iii. Tax Amount: 0.05
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.0
+50. Item Tax 10:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.5
+50. Item Tax 11:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.4999999999999996
+50. Item Tax 12:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.5
+50. Item Tax 13:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.5
+50. Item Tax 14:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.5
+50. Item Tax 15:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.5
+50. Item Tax 16:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.4999999999999996
+50. Item Tax 17:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.4999999999999996
+50. Item Tax 18:
+     iii. Tax Amount: 0.09
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 19:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.5
+50. Item Tax 20:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 21:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 22:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 23:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 24:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 25:
+     iii. Tax Amount: 0.03
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 1.25
+50. Item Tax 26:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 27:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 28:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 29:
+     iii. Tax Amount: 0.06
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 30:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.0000000000000004
+50. Item Tax 31:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.0000000000000004
+50. Item Tax 32:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 33:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 34:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 35:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 36:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 37:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.0
+50. Item Tax 38:
+     iii. Tax Amount: 0.07
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 2.5
+50. Item Tax 39:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 40:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 41:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 42:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 43:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 44:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 45:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 46:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 47:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 48:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 49:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 50:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 51:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 52:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 53:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 54:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 55:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+50. Item Tax 56:
+     iii. Tax Amount: 0.08
+     iv. Tax Flag: B
+     v. Tax Percent: 2
+     vi. Tax Description: **** NC 2% TAX
+     vii. Tax Authority: NC
+     viii. Taxable Amount: 3.33
+52. Tender Type Date:
+     i. Tender Entry Method: *** Not found
+     ii. Tender Type: CASH
+     iii. Account Number: *** Not found
+     iv. Auth Code: *** Not found
+     v. Total Amount: 161.14
+     vi. Tender Reference: *** Not found
+     vii. Payment Response:
+          1. Response IDe: *** Not found
+          2. Card Type: *** Not found
+          3. ISO Res Code: *** Not found
+          4. Aux Response: *** Not found
+          5. Response Code: *** Not found
+          6. Response Message: *** Not found
+          7. Display Message: *** Not found
+53. FinalTaxLines 1:
+     i. Tax Amount: 0.08
+     ii. Tax Percent: 2
+     iii. Tax Description: **** NC 2% TAX
+     iv. Tax Detail Number: 1
+     v. Tax Rule Code: NC
+54. Totals Transaction Data:
+     i. Sub Total Amount: 161.14 - 2.83 = 158.31
+     ii. Discount Total: 48.79
+     iii. Discount Total Amount: 158.31
+     iv. Total Amount: 161.14
+     v. Change: .00
+*******************************************************************
+                               TIMES                               
+*******************************************************************
+Database reading time: 0.332 seconds
+Record processing time: 0.012 seconds

@@ -3,6 +3,8 @@ import re
 import sys
 from io import StringIO
 import json
+from backend.script.db import GetTransaction 
+import time
 
 ########################################################
 ###################### PATTERNS ########################
@@ -227,338 +229,378 @@ discountPercent = '*** Transformation unclear' #49.	ItemDiscounts iii.	DiscountP
 # print(f"40. Product Id: {productId}")
 # print(f"48. Return Amount: {returnAmount}")
 
-taxDetailNumber = 0
-totalTax = 0
-totalDescuento = 0
-itemSold = 0    
+def ReadTransaction(receipt_text, checkboxes):
+        itemSold = 0
+        totalDescuento = 0
+        taxDetailNumber = 0
+        totalTax = 0      
+
+        if not receipt_text:
+            print("Error: No se proporcionó ningún texto para procesar.")
+            return
+
+        result = {}  # Diccionario para almacenar los resultados según las reglas
+
+        lines = receipt_text.splitlines()
+        try:
+            for i, line in enumerate(lines):
+                if transactionDateTimeMatch := transactionDateTimePattern.search(line): #Verifica si la línea corresponde al 4. TransactionDate & 5. TransactionTime
+                    transactionDate = datetime.strptime(transactionDateTimeMatch.group(1), '%m/%d/%y').strftime('%Y-%m-%d')
+                    transactionTime = datetime.strptime(transactionDateTimeMatch.group(2), '%H:%M').strftime('%H:%M:00')
+
+                    result["transactionDate"] = transactionDate
+                    result["transactionTime"] = transactionTime
+
+                elif i == 1:
+                    if addressMatch := addressPattern.search(line): #Verifica si la línea corresponde al 13. address1
+                        result["address1"] = addressMatch.group(1)            
+
+                elif i == 2: 
+                    if cityStateZipPatternMatch := cityStateZipPattern.search(line): #Verificar si la línea corresponde a 14. City & 15. StateCode & 16. StoreZip
+                        result["city"] = cityStateZipPatternMatch.group(1)
+                        result["stateCode"] = cityStateZipPatternMatch.group(2)
+                        result["storeZip"] = cityStateZipPatternMatch.group(3)
+
+                elif i == 3:
+                    if storePhoneNumberMatch := storePhoneNumberPattern.search(line): #Verificar si la línea corresponde al 19. StorePhoneNumber
+                        result["storePhoneNumber"] = storePhoneNumberMatch.group(1)
+
+                elif detailedTransactionData := detailedTransactionDataPattern.search(line): # Verificar si la línea corresponde a un itemsSold 37, 38, 39, 40, 41, 42, 43, 44 & 45
+                    quantitySoldType = 'LBS' if detailedTransactionData.group(1) == 'WT' else 'EACH'
+                    quantitySold = itemsSoldWeightPattern.search(lines[i-1]).group(1) if detailedTransactionData.group(1) == 'WT' else '1'
+                    description = detailedTransactionData.group(2)
+                    dollarAmount = float(detailedTransactionData.group(3))
+                    taxFlag = detailedTransactionData.group(4)
+
+                    itemSold += dollarAmount
+                    productMapping[description] = dollarAmount
+
+                    # Asegurarse de que "itemsSold" sea una lista
+                    if "detailedTransactionData" not in result:
+                        result["detailedTransactionData"] = []
+
+                    # Agregar el producto a la lista
+                    result["detailedTransactionData"].append({
+                        "description": description,
+                        "quantitySoldType": quantitySoldType,
+                        "quantitySold": quantitySold,
+                        "dollarAmount": dollarAmount,
+                        "taxFlag": taxFlag
+                    })
+
+                elif discount := itemDiscountsPattern.search(line): # Verificar si la línea corresponde a 46. DiscountDollarAmount & 49. ItemDiscounts
+                    discountReasonCode = discount.group(1)
+                    discountDescription = discount.group(2)
+                    discountAmount = discountDollarAmount = float(discount.group(3))
+                    printLine = discount.group(4)
+                    
+                    extDollarAmount = productMapping.get(discountDescription, 0) - discountDollarAmount
+                    productExtDollarAmountMapping[discountDescription] = extDollarAmount
+
+                    if(discountReasonCode == 'SC'):
+                        discountPercent = round(discountDollarAmount / productMapping.get(discountDescription, 1), 2)
+
+                    totalDescuento += discountDollarAmount
+
+                    # Asegurarse de que "discounts" sea una lista
+                    if "discount" not in result:
+                        result["discount"] = []
+
+                    result["discount"].append({
+                        "discountDollarAmount": discountDollarAmount,
+                        "extDollarAmount": extDollarAmount,
+                        "discountPercent": discountPercent,
+                        "discountAmount": discountAmount,
+                        "discountDescription": discountDescription,
+                        "discountReasonCode": discountReasonCode,
+                        "printLine": printLine     
+                    })
+
+                elif tenderEntryMethodMatch := tenderEntryMethodPattern.search(line): #Verifica si la línea corresponde al tender type method 52 i
+                    result["tenderEntryMethod"] = tenderEntryMethodMapping.get(tenderEntryMethodMatch.group(1), 'Manual')
+
+                elif tenderTypeAndAmountMatch := tenderTypeAndAmountPattern.search(line): #Verifica si la línea corresponde al tender type 52 ii & amount v
+                    result["tenderType"] = tenderTypeMapping.get(tenderTypeAndAmountMatch.group(1), 'OTHER')
+                    result["tenderAmount"] = tenderTypeAndAmountMatch.group(2)
+
+                elif accountNumberMatch := accountNumberPattern.search(line): #Verifica si la línea corresponde al account number type 52 iii
+                    result["accountNumber"] = accountNumberMatch.group(1)
+
+                elif authCodeMatch := authCodePattern.search(line): #Verifica si la línea corresponde al tender type 52 iV
+                    result["authCode"] = authCodeMatch.group(1)
+
+                elif tenderReferenceMatch := tenderReferencePattern.search(line): #Verifica si la línea corresponde al tender reference 52 vi
+                    result["tenderReference"] = tenderReferenceMatch.group(1)
+
+                elif cardTypeMatch := cardTypePattern.search(line): #Verifica si la línea corresponde al tender type 52 vii 2
+                    result["cardType"] = cardTypeMatch.group(1)
+
+                elif isoResCodeMatch := isoResCodePattern.search(line): #Verifica si la línea corresponde al tender type 52 vii 3
+                    result["isoResCode"] = isoResCodeMatch.group(1)
+
+                elif auxResponseMatch := auxResponsePattern.search(line): #Verifica si la línea corresponde al tender type 52 vii 4
+                    result["auxResponse"] = auxResponseMatch.group(1)
+
+                elif responseCodeMatch := responseCodePattern.search(line): #Verifica si la línea corresponde al tender type 52 vii 5
+                    result["responseCode"] = responseCodeMatch.group(1)
+
+                elif responseMessageMatch := responseMessagePattern.search(line): #Verifica si la línea corresponde al tender type 52 vii 6
+                    result["responseMessage"] = responseMessageMatch.group(1)
+
+                elif displayMessageMatch := displayMessagePattern.search(line): #Verifica si la línea corresponde al tender type 52 vii 7
+                    result["displayMessage"] = displayMessageMatch.group(1)
+
+                elif finalTaxLinesMatch := finalTaxLinesPattern.search(line): #Verificar si la línea corresponde 53. FinalTaxLines
+                    taxDetailNumber += 1
+                    taxDescription = finalTaxLinesMatch.group(1)
+                    taxRuleCode = finalTaxLinesMatch.group(2)
+                    taxPercent = finalTaxLinesMatch.group(3)
+                    taxAmount = finalTaxLinesMatch.group(4)
+
+                    totalTax += float(taxAmount)
+
+                    if "itemTax" not in result:
+                        result["itemTax"] = []
+
+                    for item in result["detailedTransactionData"]:
+                        dollarAmount = float(item["dollarAmount"])
+                        taxAmount = round(dollarAmount * (float(taxPercent) / 100), 2)
+
+                        result["itemTax"].append({
+                            "taxAmount": taxAmount,
+                            "taxFlag": item["taxFlag"],
+                            "taxPercent": taxPercent,
+                            "taxDescription": taxDescription,
+                            "taxAuthority": taxRuleCode,
+                            "taxableAmount": productExtDollarAmountMapping.get(item["description"], dollarAmount)
+                        })
+
+                    # Asegurarse de que "itemsSold" sea una lista
+                    if "finalTaxLines" not in result:
+                        result["finalTaxLines"] = []
+
+                    # Agregar el producto a la lista
+                    result["finalTaxLines"].append({
+                        "taxAmount": taxAmount,
+                        "taxPercent": taxPercent,
+                        "taxDescription": taxDescription,
+                        "taxDetailNumber": taxDetailNumber,
+                        "taxRuleCode": taxRuleCode,
+                    })
+
+                elif totalAmountMatch := totalAmountPattern.search(line): #Verifica si la línea corresponde 36. TotalAmount
+                    result["totalAmount"] = totalAmountMatch.group(1)
+                    #discountTotalAmount = subTotalAmount = float(totalAmount) - totalTax
+
+                    # result["totalsTransactionData"] = {
+                    #     "totalAmount": totalAmount,
+                    #     "discountTotalAmount": discountTotalAmount,
+                    #     "subTotalAmount": subTotalAmount
+                    # }
+
+                elif discountTotalMatch := discountTotalPattern.search(line): #Verifica si la línea corresponde 54. TotalsTransactionData ii. DiscountTotal
+                    result["discountTotal"] = discountTotalMatch.group(1)
+
+                elif changeMatch := changePattern.search(line): #Verifica si la línea corresponde 54. TotalsTransactionData v. Change
+                    result["change"] = changeMatch.group(1)
+
+            
+            print(f"1. TTDR Version: {tTDRVersion}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+            print(f"2. Application ID: {applicationID}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+            print(f"3. Merchant Number: {merchantNumber}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"4. Transaction Date: {result.get('transactionDate', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"5. Transaction Time: {result.get('transactionTime', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"6. Entry Type: {entryType}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"7. Trans Id: {transId}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"8. Transaction Type: {transactionType}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"9. Store Number: {storeNumber}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"10. Location Type: {locationType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+            print(f"11. Register Number: {registerNumber}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"12. Register Type: {registerType}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"13. Address 1: {result.get('address1', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"14. City: {result.get('city', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"15. State Code: {result.get('stateCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"16. Store Zip: {result.get('storeZip', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"17. Country Code: {countryCode}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+            print(f"18. Store Phone Type: {storePhoneType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+            print(f"19. Store Phone Number: {result.get('storePhoneNumber', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"20. ClerkId Type: {clerkIdType}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"21. Clerk Id: {clerkId}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"22. Clerk Name: {clerkName}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"23. Clerk Role: {clerkRole}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+            print(f"24. Recipient Type: {recipientType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+            print(f"25. First Name: {firstName}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"26. Last Name: {lastName}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"27. Email Address: {emailAddress}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"28. Loyalty Card Number: {loyaltyCardNumber}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"29. Loyalty Level: {loyaltyLevel}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"30. Customer ID: {customerID}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+            
+            print(f"31. Alternate IDs\n     a.CROSS REFERENCE") if not (checkboxes.get('withoutStaticDataCheckbox', True) and checkboxes.get('withoutUnknownDataCheckbox', True)) else None
+            print(f"          i.SYSTEM REFERENCE: {SYSTEM_REFERENCE}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+            print(f"          i.SYSTEM REFERENCE ID: {SYSTEM_REFERENCE_ID}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            
+            print(f"32. Language Selection: {languageSelection}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+            print(f"33. Raw Text Receipt: {rawTextReceipt}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"34. Currency Type: {currencyType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+            print(f"35. Output Language: {outputLanguage}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+            print(f"36. Total Amount: {result.get('totalAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"36. Items Soldt: {itemSold}") if checkboxes.get('extractDataCheckbox', True) else None
+            
+            if "detailedTransactionData" in result and (checkboxes.get('extractDataCheckbox', True) or not checkboxes.get('withoutStaticDataCheckbox', True)):
+                for id, item in enumerate(result["detailedTransactionData"], start=1):
+                    print(f"38. detailedTransactionData {id}:")
+                    print(f"     39. Product Id Type: {productIdType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+                    print(f"     40. Product Id: {productId}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"     41. Description: {item.get('description', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"     42. Quantity Sold Type: {item.get('quantitySoldType', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"     43. Quantity Sold: {item.get('quantitySold', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"     44. Item Received Type: {itemReceivedType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+                    print(f"     45. Dollar Amount: {item.get('dollarAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            # else:
+            #     print(f"38. Detailed Transaction Data: *** Not found")
+
+            if "discount" in result:
+                for id, item in enumerate(result["discount"], start=1):
+                    #print(f"46. Discounts {id}:")
+                    print(f"46. Discount Dollar Amount: {item.get('discountDollarAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"47. Ext Dollar Amount: {item.get('extDollarAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"48. Return Amount: {item.get('extDollarAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"49. Item Discounts") if checkboxes.get('extractDataCheckbox', True) or not checkboxes.get('withoutStaticDataCheckbox', True) else None
+                    print(f"     iii. Discount Percent: {item.get('discountPercent', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"     iv. Discount Amount: {item.get('discountAmount', '*** Not found'):.2f}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"     v. Discount Description: {item.get('discountDescription', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"     vi. Discount Reason Code: {item.get('discountReasonCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"     vii. Discounting Method: {discountingMethod}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+                    print(f"     viii. PrintLine: {item.get('printLine', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            else:
+                print(f"46. Discounts: *** Not implemented")
+            
+            if "itemTax" in result and (checkboxes.get('extractDataCheckbox', True) or not checkboxes.get('withoutStaticDataCheckbox', True)):
+                for id, item in enumerate(result["itemTax"], start=1):
+                    print(f"50. Item Tax {id}:")
+                    print(f"     ii. Tax Type: {taxType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+                    print(f"     iii. Tax Amount: {item.get('taxAmount', '*** Not found'):.2f}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"     iv. Tax Flag: {item.get('taxFlag', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"     v. Tax Percent: {item.get('taxPercent', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"     vi. Tax Description: {item.get('taxDescription', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"     vii. Tax Authority: {item.get('taxAuthority', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"     viii. Taxable Amount: {item.get('taxableAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            # else:
+            #     print(f"50. Item Tax: *** Not implemented")
+            
+            if "detailedTransactionData" in result and not (checkboxes.get('withoutStaticDataCheckbox', True)):
+                for id, item in enumerate(result["detailedTransactionData"], start=1):
+                    print(f"51. Detailed TransactionData {id}:")
+                    print(f"     i. Attribute Type: {attributeType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+                    print(f"     ii. Attribute Description: {attributeDescription}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+                    print(f"     iii. AttributeData: {'true' if item.get('taxFlag') in ['B', 'F'] else 'false'}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+            # else:
+            #     print(f"51 Item Attributes: *** Not found")
+        
+            print("52. Tender Type Date:") if checkboxes.get('extractDataCheckbox', True) or not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"     i. Tender Entry Method: {result.get('tenderEntryMethod', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"     ii. Tender Type: {result.get('tenderType', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"     iii. Account Number: {result.get('accountNumber', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"     iv. Auth Code: {result.get('authCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"     v. Total Amount: {result.get('tenderAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"     vi. Tender Reference: {result.get('tenderReference', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print("     vii. Payment Response:") if checkboxes.get('extractDataCheckbox', True) or not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"          1. Response IDe: {result.get('tenderReference', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"          2. Card Type: {result.get('cardType', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"          3. ISO Res Code: {result.get('isoResCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"          4. Aux Response: {result.get('auxResponse', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"          5. Response Code: {result.get('responseCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"          6. Response Message: {result.get('responseMessage', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"          7. Display Message: {result.get('displayMessage', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            print(f"          8. Echo Data: {echoData}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            
+            if "finalTaxLines" in result and checkboxes.get('extractDataCheckbox', True):
+                for id, item in enumerate(result["finalTaxLines"], start=1):
+                    print(f"53. FinalTaxLines {id}:")
+                    print(f"     i. Tax Amount: {item.get('taxAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"     ii. Tax Percent: {item.get('taxPercent', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"     iii. Tax Description: {item.get('taxDescription', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"     iv. Tax Detail Number: {item.get('taxDetailNumber', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+                    print(f"     v. Tax Rule Code: {item.get('taxRuleCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
+            
+            if checkboxes.get('extractDataCheckbox', True):
+                print("54. Totals Transaction Data:")
+                print(f"     i. Sub Total Amount: {result.get('totalAmount', 0)} - {(totalTax):.2f} = {(float(result.get('totalAmount', 0)) - totalTax):.2f}")
+                print(f"     ii. Discount Total: {result.get('discountTotal', '*** Not found')}")
+                print(f"     iii. Discount Total Amount: {(float(result.get('totalAmount', 0)) - totalTax):.2f}")
+                print(f"     iv. Total Amount: {result.get('totalAmount', '*** Not found')}")
+                print(f"     v. Change: {result.get('change', '*** Not found')}")
+            
+            print(f"55. Transaction Document") if not (checkboxes.get('withoutStaticDataCheckbox', True) and checkboxes.get('withoutUnknownDataCheckbox', True)) else None
+            print(f"          i. Document Name: {documentName}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"          ii. Document Type: {documentType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+            print(f"          iii. Document Ref Id: {documentRefId}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"          iv. Document Media Type: {documentMediaType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+            print(f"          v. Mime Content Type: {mimeContentType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
+            print(f"          vi. Docu Capture Date Time: {docuCaptureDateTime}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            print(f"          vii.	Document Date: {documentDate}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+            
+            # print('\n\n-------------------------------------------------')
+            # print(f"Total venta: {itemSold:.2f}")
+            # print(f"Descuento total: {totalDescuento:.2f}")
+            # print('-------------------------------------------------')
+            # for id, (description, dollarAmount) in enumerate(productMapping.items(), start=1):
+            #     print(f"FinalTaxLines {id}: {description} {dollarAmount}")
+        except Exception as e:
+            print(f"Error general en ReadTransaction: {str(e)}")
 
 if __name__ == "__main__":
+    output_file = "output.txt"
+    qty = 100
+
     original_stdout = sys.stdout  
     captured_output = StringIO() 
     sys.stdout = captured_output 
 
     receipt_text = sys.argv[1]
     checkboxes_json = sys.argv[2] 
-    checkboxes = json.loads(checkboxes_json) # Convertir el JSON de los checkboxes a un diccionario
-    # for checkbox, value in checkboxes.items():
-    #     print(f"El checkbox '{checkbox}' tiene el valor: {value}")
+    mode = sys.argv[3]
     
-    if not receipt_text:
-        print("Error: No se proporcionó ningún texto para procesar.")
-        sys.exit(1)
+    checkboxes = json.loads(checkboxes_json) 
+    
+    
 
-    result = {}  # Diccionario para almacenar los resultados según las reglas
+    try: 
+        start_get_transaction = time.time()
+        data = GetTransaction(qty)
+        end_get_transaction = time.time()
+        print(f"Time for GetTransaction: {end_get_transaction - start_get_transaction:.2f} seconds")
+        
+        if mode == 'onlyOne':
 
-    lines = receipt_text.splitlines()
-    for i, line in enumerate(lines):
-        if transactionDateTimeMatch := transactionDateTimePattern.search(line): #Verifica si la línea corresponde al 4. TransactionDate & 5. TransactionTime
-            transactionDate = datetime.strptime(transactionDateTimeMatch.group(1), '%m/%d/%y').strftime('%Y-%m-%d')
-            transactionTime = datetime.strptime(transactionDateTimeMatch.group(2), '%H:%M').strftime('%H:%M:00')
+            start_db = time.time()
+            data = GetTransaction(qty)  # Llama a la función para traer los registros
+            end_db = time.time()
 
-            result["transactionDate"] = transactionDate
-            result["transactionTime"] = transactionTime
-
-        elif i == 1:
-            if addressMatch := addressPattern.search(line): #Verifica si la línea corresponde al 13. address1
-                result["address1"] = addressMatch.group(1)            
-
-        elif i == 2: 
-            if cityStateZipPatternMatch := cityStateZipPattern.search(line): #Verificar si la línea corresponde a 14. City & 15. StateCode & 16. StoreZip
-                result["city"] = cityStateZipPatternMatch.group(1)
-                result["stateCode"] = cityStateZipPatternMatch.group(2)
-                result["storeZip"] = cityStateZipPatternMatch.group(3)
-
-        elif i == 3:
-            if storePhoneNumberMatch := storePhoneNumberPattern.search(line): #Verificar si la línea corresponde al 19. StorePhoneNumber
-                result["storePhoneNumber"] = storePhoneNumberMatch.group(1)
-
-        elif detailedTransactionData := detailedTransactionDataPattern.search(line): # Verificar si la línea corresponde a un itemsSold 37, 38, 39, 40, 41, 42, 43, 44 & 45
-            quantitySoldType = 'LBS' if detailedTransactionData.group(1) == 'WT' else 'EACH'
-            quantitySold = itemsSoldWeightPattern.search(lines[i-1]).group(1) if detailedTransactionData.group(1) == 'WT' else '1'
-            description = detailedTransactionData.group(2)
-            dollarAmount = float(detailedTransactionData.group(3))
-            taxFlag = detailedTransactionData.group(4)
-
-            itemSold += dollarAmount
-            productMapping[description] = dollarAmount
-
-            # Asegurarse de que "itemsSold" sea una lista
-            if "detailedTransactionData" not in result:
-                result["detailedTransactionData"] = []
-
-            # Agregar el producto a la lista
-            result["detailedTransactionData"].append({
-                "description": description,
-                "quantitySoldType": quantitySoldType,
-                "quantitySold": quantitySold,
-                "dollarAmount": dollarAmount,
-                "taxFlag": taxFlag
-            })
-
-        elif discount := itemDiscountsPattern.search(line): # Verificar si la línea corresponde a 46. DiscountDollarAmount & 49. ItemDiscounts
-            discountReasonCode = discount.group(1)
-            discountDescription = discount.group(2)
-            discountAmount = discountDollarAmount = float(discount.group(3))
-            printLine = discount.group(4)
+            start_processing = time.time()
+            for item in data:
+                if '<line>' in item['param_value']:
+                    print(f"*******************************************************************")
+                    print(f"                         TRANSACTION id: {item['id']}              ")
+                    print(f"*******************************************************************")
+                    result = ReadTransaction(item['param_value'], checkboxes)   
             
-            extDollarAmount = productMapping.get(discountDescription, 0) - discountDollarAmount
-            productExtDollarAmountMapping[discountDescription] = extDollarAmount
+            end_processing = time.time()     
+        elif mode == 'database':  
+            print(f"llamar a BD")
 
-            if(discountReasonCode == 'SC'):
-                discountPercent = round(discountDollarAmount / productMapping.get(discountDescription, 1), 2)
-
-            totalDescuento += discountDollarAmount
-
-            # Asegurarse de que "discounts" sea una lista
-            if "discount" not in result:
-                result["discount"] = []
-
-            result["discount"].append({
-                "discountDollarAmount": discountDollarAmount,
-                "extDollarAmount": extDollarAmount,
-                "discountPercent": discountPercent,
-                "discountAmount": discountAmount,
-                "discountDescription": discountDescription,
-                "discountReasonCode": discountReasonCode,
-                "printLine": printLine     
-            })
-
-        elif tenderEntryMethodMatch := tenderEntryMethodPattern.search(line): #Verifica si la línea corresponde al tender type method 52 i
-            result["tenderEntryMethod"] = tenderEntryMethodMapping.get(tenderEntryMethodMatch.group(1), 'Manual')
-
-        elif tenderTypeAndAmountMatch := tenderTypeAndAmountPattern.search(line): #Verifica si la línea corresponde al tender type 52 ii & amount v
-            result["tenderType"] = tenderTypeMapping.get(tenderTypeAndAmountMatch.group(1), 'OTHER')
-            result["tenderAmount"] = tenderTypeAndAmountMatch.group(2)
-
-        elif accountNumberMatch := accountNumberPattern.search(line): #Verifica si la línea corresponde al account number type 52 iii
-            result["accountNumber"] = accountNumberMatch.group(1)
-
-        elif authCodeMatch := authCodePattern.search(line): #Verifica si la línea corresponde al tender type 52 iV
-            result["authCode"] = authCodeMatch.group(1)
-
-        elif tenderReferenceMatch := tenderReferencePattern.search(line): #Verifica si la línea corresponde al tender reference 52 vi
-            result["tenderReference"] = tenderReferenceMatch.group(1)
-
-        elif cardTypeMatch := cardTypePattern.search(line): #Verifica si la línea corresponde al tender type 52 vii 2
-            result["cardType"] = cardTypeMatch.group(1)
-
-        elif isoResCodeMatch := isoResCodePattern.search(line): #Verifica si la línea corresponde al tender type 52 vii 3
-            result["isoResCode"] = isoResCodeMatch.group(1)
-
-        elif auxResponseMatch := auxResponsePattern.search(line): #Verifica si la línea corresponde al tender type 52 vii 4
-            result["auxResponse"] = auxResponseMatch.group(1)
-
-        elif responseCodeMatch := responseCodePattern.search(line): #Verifica si la línea corresponde al tender type 52 vii 5
-            result["responseCode"] = responseCodeMatch.group(1)
-
-        elif responseMessageMatch := responseMessagePattern.search(line): #Verifica si la línea corresponde al tender type 52 vii 6
-            result["responseMessage"] = responseMessageMatch.group(1)
-
-        elif displayMessageMatch := displayMessagePattern.search(line): #Verifica si la línea corresponde al tender type 52 vii 7
-            result["displayMessage"] = displayMessageMatch.group(1)
-
-        elif finalTaxLinesMatch := finalTaxLinesPattern.search(line): #Verificar si la línea corresponde 53. FinalTaxLines
-            taxDetailNumber += 1
-            taxDescription = finalTaxLinesMatch.group(1)
-            taxRuleCode = finalTaxLinesMatch.group(2)
-            taxPercent = finalTaxLinesMatch.group(3)
-            taxAmount = finalTaxLinesMatch.group(4)
-
-            totalTax += float(taxAmount)
-
-            if "itemTax" not in result:
-                result["itemTax"] = []
-
-            for item in result["detailedTransactionData"]:
-                dollarAmount = float(item["dollarAmount"])
-                taxAmount = round(dollarAmount * (float(taxPercent) / 100), 2)
-
-                result["itemTax"].append({
-                    "taxAmount": taxAmount,
-                    "taxFlag": item["taxFlag"],
-                    "taxPercent": taxPercent,
-                    "taxDescription": taxDescription,
-                    "taxAuthority": taxRuleCode,
-                    "taxableAmount": productExtDollarAmountMapping.get(item["description"], dollarAmount)
-                })
-
-            # Asegurarse de que "itemsSold" sea una lista
-            if "finalTaxLines" not in result:
-                result["finalTaxLines"] = []
-
-            # Agregar el producto a la lista
-            result["finalTaxLines"].append({
-                "taxAmount": taxAmount,
-                "taxPercent": taxPercent,
-                "taxDescription": taxDescription,
-                "taxDetailNumber": taxDetailNumber,
-                "taxRuleCode": taxRuleCode,
-            })
-
-        elif totalAmountMatch := totalAmountPattern.search(line): #Verifica si la línea corresponde 36. TotalAmount
-            result["totalAmount"] = totalAmountMatch.group(1)
-            #discountTotalAmount = subTotalAmount = float(totalAmount) - totalTax
-
-            # result["totalsTransactionData"] = {
-            #     "totalAmount": totalAmount,
-            #     "discountTotalAmount": discountTotalAmount,
-            #     "subTotalAmount": subTotalAmount
-            # }
-
-        elif discountTotalMatch := discountTotalPattern.search(line): #Verifica si la línea corresponde 54. TotalsTransactionData ii. DiscountTotal
-            result["discountTotal"] = discountTotalMatch.group(1)
-
-        elif changeMatch := changePattern.search(line): #Verifica si la línea corresponde 54. TotalsTransactionData v. Change
-            result["change"] = changeMatch.group(1)
-
-    try:
-        print(f"1. TTDR Version: {tTDRVersion}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"2. Application ID: {applicationID}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"3. Merchant Number: {merchantNumber}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"4. Transaction Date: {result.get('transactionDate', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"5. Transaction Time: {result.get('transactionTime', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"6. Entry Type: {entryType}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"7. Trans Id: {transId}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"8. Transaction Type: {transactionType}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"9. Store Number: {storeNumber}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"10. Location Type: {locationType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"11. Register Number: {registerNumber}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"12. Register Type: {registerType}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"13. Address 1: {result.get('address1', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"14. City: {result.get('city', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"15. State Code: {result.get('stateCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"16. Store Zip: {result.get('storeZip', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"17. Country Code: {countryCode}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"18. Store Phone Type: {storePhoneType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"19. Store Phone Number: {result.get('storePhoneNumber', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"20. ClerkId Type: {clerkIdType}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"21. Clerk Id: {clerkId}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"22. Clerk Name: {clerkName}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"23. Clerk Role: {clerkRole}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"24. Recipient Type: {recipientType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"25. First Name: {firstName}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"26. Last Name: {lastName}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"27. Email Address: {emailAddress}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"28. Loyalty Card Number: {loyaltyCardNumber}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"29. Loyalty Level: {loyaltyLevel}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"30. Customer ID: {customerID}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        
-        print(f"31. Alternate IDs\n     a.CROSS REFERENCE") if not (checkboxes.get('withoutStaticDataCheckbox', True) and checkboxes.get('withoutUnknownDataCheckbox', True)) else None
-        print(f"          i.SYSTEM REFERENCE: {SYSTEM_REFERENCE}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"          i.SYSTEM REFERENCE ID: {SYSTEM_REFERENCE_ID}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        
-        print(f"32. Language Selection: {languageSelection}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"33. Raw Text Receipt: {rawTextReceipt}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"34. Currency Type: {currencyType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"35. Output Language: {outputLanguage}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"36. Total Amount: {result.get('totalAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"36. Items Soldt: {itemSold}") if checkboxes.get('extractDataCheckbox', True) else None
-        
-        if "detailedTransactionData" in result:
-            for id, item in enumerate(result["detailedTransactionData"], start=1):
-                print(f"38. detailedTransactionData {id}:")
-                print(f"     39. Product Id Type: {productIdType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-                print(f"     40. Product Id: {productId}") if not checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     41. Description: {item.get('description', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     42. Quantity Sold Type: {item.get('quantitySoldType', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     43. Quantity Sold: {item.get('quantitySold', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     44. Item Received Type: {itemReceivedType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-                print(f"     45. Dollar Amount: {item.get('dollarAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        else:
-            print(f"38. Detailed Transaction Data: *** Not found")
-
-        if "discount" in result:
-            for id, item in enumerate(result["discount"], start=1):
-                #print(f"46. Discounts {id}:")
-                print(f"46. Discount Dollar Amount: {item.get('discountDollarAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"47. Ext Dollar Amount: {item.get('extDollarAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"48. Return Amount: {item.get('extDollarAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"49. Item Discounts")
-                print(f"     iii. Discount Percent: {item.get('discountPercent', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     iv. Discount Amount: {item.get('discountAmount', '*** Not found'):.2f}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     v. Discount Description: {item.get('discountDescription', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     vi. Discount Reason Code: {item.get('discountReasonCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     vii. Discounting Method: {discountingMethod}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-                print(f"     viii. PrintLine: {item.get('printLine', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        else:
-            print(f"46. Discounts: *** Not implemented")
-        
-        if "itemTax" in result:
-            for id, item in enumerate(result["itemTax"], start=1):
-                print(f"50. Item Tax {id}:")
-                print(f"     ii. Tax Type: {taxType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-                print(f"     iii. Tax Amount: {item.get('taxAmount', '*** Not found'):.2f}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     iv. Tax Flag: {item.get('taxFlag', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     v. Tax Percent: {item.get('taxPercent', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     vi. Tax Description: {item.get('taxDescription', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     vii. Tax Authority: {item.get('taxAuthority', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     viii. Taxable Amount: {item.get('taxableAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        else:
-            print(f"50. Item Tax: *** Not implemented")
-        
-        if "detailedTransactionData" in result and not (checkboxes.get('withoutStaticDataCheckbox', True) and checkboxes.get('withoutUnknownDataCheckbox', True)):
-            for id, item in enumerate(result["detailedTransactionData"], start=1):
-                print(f"51. Detailed TransactionData {id}:")
-                print(f"     i. Attribute Type: {attributeType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-                print(f"     ii. Attribute Description: {attributeDescription}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-                print(f"     iii. AttributeData: {'true' if item.get('taxFlag') in ['B', 'F'] else 'false'}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        else:
-            print(f"51 Item Attributes: *** Not found")
-    
-        print("52. Tender Type Date:")
-        print(f"     i. Tender Entry Method: {result.get('tenderEntryMethod', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"     ii. Tender Type: {result.get('tenderType', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"     iii. Account Number: {result.get('accountNumber', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"     iv. Auth Code: {result.get('authCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"     v. Total Amount: {result.get('tenderAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"     vi. Tender Reference: {result.get('tenderReference', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print("     vii. Payment Response:")
-        print(f"          1. Response IDe: {result.get('tenderReference', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"          2. Card Type: {result.get('cardType', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"          3. ISO Res Code: {result.get('isoResCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"          4. Aux Response: {result.get('auxResponse', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"          5. Response Code: {result.get('responseCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"          6. Response Message: {result.get('responseMessage', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"          7. Display Message: {result.get('displayMessage', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"          8. Echo Data: {echoData}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        
-        if "finalTaxLines" in result:
-            for id, item in enumerate(result["finalTaxLines"], start=1):
-                print(f"53. FinalTaxLines {id}:")
-                print(f"     i. Tax Amount: {item.get('taxAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     ii. Tax Percent: {item.get('taxPercent', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     iii. Tax Description: {item.get('taxDescription', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     iv. Tax Detail Number: {item.get('taxDetailNumber', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     v. Tax Rule Code: {item.get('taxRuleCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        else:
-            print("53. FinalTaxLines: *** Not implemented")
-        print("54. Totals Transaction Data:")
-        print(f"     i. Sub Total Amount: {result.get('totalAmount', 0)} - {(totalTax):.2f} = {(float(result.get('totalAmount', 0)) - totalTax):.2f}")
-        print(f"     ii. Discount Total: {result.get('discountTotal', '*** Not found')}")
-        print(f"     iii. Discount Total Amount: {(float(result.get('totalAmount', 0)) - totalTax):.2f}")
-        print(f"     iv. Total Amount: {result.get('totalAmount', '*** Not found')}")
-        print(f"     v. Change: {result.get('change', '*** Not found')}")
-        
-        print(f"55. Transaction Document") if not (checkboxes.get('withoutStaticDataCheckbox', True) and checkboxes.get('withoutUnknownDataCheckbox', True)) else None
-        print(f"          i. Document Name: {documentName}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"          ii. Document Type: {documentType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"          iii. Document Ref Id: {documentRefId}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"          iv. Document Media Type: {documentMediaType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"          v. Mime Content Type: {mimeContentType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"          vi. Docu Capture Date Time: {docuCaptureDateTime}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"          vii.	Document Date: {documentDate}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-
-
-        
-        print('\n\n-------------------------------------------------')
-        print(f"Total venta: {itemSold:.2f}")
-        print(f"Descuento total: {totalDescuento:.2f}")
-        print('-------------------------------------------------')
-        for id, (description, dollarAmount) in enumerate(productMapping.items(), start=1):
-            print(f"FinalTaxLines {id}: {description} {dollarAmount}")
-
-
+        end_loop = time.time()
+        print(f"*******************************************************************")
+        print(f"                               TIMES                               ")
+        print(f"*******************************************************************")
+        db_time = end_db - start_db
+        print(f"Database reading time: {db_time:.3f} seconds")
+        processing_time = end_processing - start_processing
+        print(f"Record processing time: {processing_time:.3f} seconds")
     finally:
         sys.stdout = original_stdout
 
-    print(captured_output.getvalue())
+    with open(output_file, "w", encoding="utf-8") as file:
+        file.write(captured_output.getvalue())
+    #print(captured_output.getvalue())

@@ -9,6 +9,7 @@ const App = () => {
         withoutStaticDataCheckbox: false,
         withoutUnknownDataCheckbox: false,
     });
+    const [inputMode, setInputMode] = useState('database');
 
     const handleCheckboxChange = (e) => {
         const { name, checked } = e.target;
@@ -16,6 +17,10 @@ const App = () => {
             ...checkboxes,
             [name]: checked,
         });
+    };
+
+    const handleModeChange = (e) => {
+        setInputMode(e.target.value);
     };
 
     const handleSubmit = async (e) => {
@@ -27,10 +32,11 @@ const App = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ text: userInput, checkboxes }),
+                body: JSON.stringify({ text: userInput, checkboxes, mode: inputMode }),
             });
 
             const data = await response.json();
+            console.log(data)
             setTransformedText(data.transformed_text);
         } catch (error) {
             console.error('Error:', error);
@@ -42,41 +48,83 @@ const App = () => {
             <div className="column">
                 <h2>The transaction</h2>
                 <form onSubmit={handleSubmit}>
-                    <textarea
-                        value={userInput}
-                        onChange={(e) => setUserInput(e.target.value)}
-                        rows="30"
-                        cols="50"
-                        placeholder="Write the transaction here"
-                    />
-                    <div className="checkbox-container">
+                <div className="radio-container">
                         <label>
                             <input
-                                type="checkbox"
-                                name="extractDataCheckbox"
-                                checked={checkboxes.extractDataCheckbox}
-                                onChange={handleCheckboxChange}
+                                type="radio"
+                                value="database"
+                                checked={inputMode === 'database'}
+                                onChange={handleModeChange}
                             />
-                            Extract Data
+                            Database
                         </label>
+                        <div style={{ marginLeft: '20px', marginTop: '10px' }}>
+                            <label style={{ display: 'flex', alignItems: 'center' }}>
+                                <span style={{ marginRight: '10px' }}>
+                                    Select how many transactions you want to analyze:
+                                </span>
+                                <input
+                                    type="text"
+                                    placeholder="0000"
+                                    maxLength="4"
+                                    style={{
+                                        width: '60px', // Ancho del input para 4 dígitos
+                                        padding: '5px',
+                                        fontSize: '14px',
+                                        border: '1px solid #ccc',
+                                        borderRadius: '5px',
+                                        textAlign: 'center',
+                                    }}
+                                />
+                            </label>
+                        </div>
                         <label>
                             <input
-                                type="checkbox"
-                                name="withoutStaticDataCheckbox"
-                                checked={checkboxes.withoutStaticDataCheckbox}
-                                onChange={handleCheckboxChange}
+                                type="radio"
+                                value="onlyOne"
+                                checked={inputMode === 'onlyOne'}
+                                onChange={handleModeChange}
                             />
-                            Without static data
+                            Only One
                         </label>
-                        <label>
-                            <input
-                                type="checkbox"
-                                name="withoutUnknownDataCheckbox"
-                                checked={checkboxes.withoutUnknownDataCheckbox}
-                                onChange={handleCheckboxChange}
-                            />
-                            Without unknown data
-                        </label>
+                    </div>   
+                    <div style={{ marginLeft: '20px', marginTop: '0px' }}>
+                        <textarea
+                            value={userInput}
+                            onChange={(e) => setUserInput(e.target.value)}
+                            rows="23"
+                            cols="50"
+                            placeholder="Write the transaction here"
+                        />
+                        <div className="checkbox-container" style={{ marginTop: '10px' }}>
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="extractDataCheckbox"
+                                    checked={checkboxes.extractDataCheckbox}
+                                    onChange={handleCheckboxChange}
+                                />
+                                Extract Data
+                            </label>
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="withoutStaticDataCheckbox"
+                                    checked={checkboxes.withoutStaticDataCheckbox}
+                                    onChange={handleCheckboxChange}
+                                />
+                                Without static data
+                            </label>
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="withoutUnknownDataCheckbox"
+                                    checked={checkboxes.withoutUnknownDataCheckbox}
+                                    onChange={handleCheckboxChange}
+                                />
+                                Without unknown data
+                            </label>
+                        </div>
                     </div>
                     <br />
                     <button type="submit">Extract data</button>
