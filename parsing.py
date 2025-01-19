@@ -357,17 +357,17 @@ def ReadTransaction(receipt_text, checkboxes):
                     taxPercent = finalTaxLinesMatch.group(3)
                     taxAmount = finalTaxLinesMatch.group(4)
 
-                    totalTax += float(taxAmount)
+                    totalTax += float(taxAmount) #--------------------- verificar si esto es correcto o valido porque solo lo hace una vez vale la pena ? este no es el tax del item si no el de general
 
                     if "itemTax" not in result:
                         result["itemTax"] = []
 
                     for item in result["detailedTransactionData"]:
                         dollarAmount = float(item["dollarAmount"])
-                        taxAmount = round(dollarAmount * (float(taxPercent) / 100), 2)
+                        taxAmountItem = round(dollarAmount * (float(taxPercent) / 100), 2)
 
                         result["itemTax"].append({
-                            "taxAmount": taxAmount,
+                            "taxAmount": taxAmountItem,
                             "taxFlag": item["taxFlag"],
                             "taxPercent": taxPercent,
                             "taxDescription": taxDescription,
@@ -541,12 +541,21 @@ def ReadTransaction(receipt_text, checkboxes):
             print(f"          vi. Docu Capture Date Time: {docuCaptureDateTime}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
             print(f"          vii.	Document Date: {documentDate}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
             
-            # print('\n\n-------------------------------------------------')
-            # print(f"Total venta: {itemSold:.2f}")
-            # print(f"Descuento total: {totalDescuento:.2f}")
-            # print('-------------------------------------------------')
-            # for id, (description, dollarAmount) in enumerate(productMapping.items(), start=1):
-            #     print(f"FinalTaxLines {id}: {description} {dollarAmount}")
+            print(f"")
+            print(f"> CONFIRMATION")
+            print(f"> Total sold (calculated): {itemSold}")
+            print(f"> minus")
+            print(f"> Total Discount (calculated): {(totalDescuento):.2f}")
+            print(f"> Subtotal (calculated): {itemSold} - {(totalDescuento):.2f} = {(itemSold - totalDescuento):.2f} ")
+            print(f"> Tax (extracted) {item.get('taxAmount', '*** Not found')}")
+            balanceCalculed = round((itemSold - totalDescuento) + float(item.get('taxAmount', 0)), 2)
+            print(f"> {(itemSold - totalDescuento):.2f} + {item.get('taxAmount', '*** Not found')} = {balanceCalculed} (extracted)")
+            print(f"> Balance = {result.get('totalAmount', '*** Not found')}")
+            if(float(result.get('totalAmount', 0)) == balanceCalculed):
+                print(f">>>>> Data extraction successful!")
+            else:
+                print(f">>>>> Error: Data extraction failed")
+
         except Exception as e:
             print(f"Error general en ReadTransaction: {str(e)}")
 

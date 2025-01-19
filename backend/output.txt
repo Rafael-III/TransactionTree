@@ -1,69 +1,32 @@
 *******************************************************************
                         TRANSACTION id: N?A                        
 *******************************************************************
-1. TTDR Version: TTDRV33
-2. Application ID: Toshiba
-3. Merchant Number: *** Source unknown
 4. Transaction Date: 2021-01-14
 5. Transaction Time: 12:41:00
-6. Entry Type: *** Source unknown
-7. Trans Id: *** Source unknown
-8. Transaction Type: *** Source unknown
-9. Store Number: *** Source unknown
-10. Location Type: purchasepickupLocation
-11. Register Number: *** Source unknown
-12. Register Type: *** Source unknown
 13. Address 1: 1220 4th Street SW, 1st Floor
 14. City: Hickory
 15. State Code: NC
 16. Store Zip: 28602
-17. Country Code: US
-18. Store Phone Type: Work
 19. Store Phone Number: 828-725-4100
-20. ClerkId Type: *** Source unknown
-21. Clerk Id: *** Source unknown
-22. Clerk Name: *** Source unknown
-23. Clerk Role: Sale
-24. Recipient Type: Recipient
-25. First Name: *** Source unknown
-26. Last Name: *** Source unknown
-27. Email Address: *** Source unknown
-28. Loyalty Card Number: *** Source unknown
-29. Loyalty Level: *** Source unknown
-30. Customer ID: [INSERT_PARTYID]
-31. Alternate IDs
-     a.CROSS REFERENCE
-          i.SYSTEM REFERENCE: POS_ID
-          i.SYSTEM REFERENCE ID: *** Source unknown
-32. Language Selection: eng
-33. Raw Text Receipt: *** Source unknown
-34. Currency Type: USD
-35. Output Language: eng
 36. Total Amount: 6.77
 36. Items Soldt: 7.07
 38. detailedTransactionData 1:
-     39. Product Id Type: SKU
      40. Product Id: *** Transformation unclear
      41. Description: SMUCKERS JELLY
      42. Quantity Sold Type: EACH
      43. Quantity Sold: 1
-     44. Item Received Type: Pickedup
      45. Dollar Amount: 2.59
 38. detailedTransactionData 2:
-     39. Product Id Type: SKU
      40. Product Id: *** Transformation unclear
      41. Description: LIBBYS PUMPKIN
      42. Quantity Sold Type: EACH
      43. Quantity Sold: 1
-     44. Item Received Type: Pickedup
      45. Dollar Amount: 2.79
 38. detailedTransactionData 3:
-     39. Product Id Type: SKU
      40. Product Id: *** Transformation unclear
      41. Description: LFS MANDARINS
      42. Quantity Sold Type: EACH
      43. Quantity Sold: 1
-     44. Item Received Type: Pickedup
      45. Dollar Amount: 1.69
 46. Discount Dollar Amount: 0.09
 47. Ext Dollar Amount: 2.5
@@ -73,7 +36,6 @@
      iv. Discount Amount: 0.09
      v. Discount Description: SMUCKERS JELLY
      vi. Discount Reason Code: SC
-     vii. Discounting Method: DollarOff
      viii. PrintLine: -B
 46. Discount Dollar Amount: 0.17
 47. Ext Dollar Amount: 1.52
@@ -83,7 +45,6 @@
      iv. Discount Amount: 0.17
      v. Discount Description: LFS MANDARINS
      vi. Discount Reason Code: SC
-     vii. Discounting Method: DollarOff
      viii. PrintLine: -B
 46. Discount Dollar Amount: 0.17
 47. Ext Dollar Amount: 1.52
@@ -93,10 +54,8 @@
      iv. Discount Amount: 0.17
      v. Discount Description: LFS MANDARINS
      vi. Discount Reason Code: SC
-     vii. Discounting Method: DollarOff
      viii. PrintLine: -B
 50. Item Tax 1:
-     ii. Tax Type: StateOrProvince
      iii. Tax Amount: 0.05
      iv. Tax Flag: B
      v. Tax Percent: 2
@@ -104,7 +63,6 @@
      vii. Tax Authority: NC
      viii. Taxable Amount: 2.5
 50. Item Tax 2:
-     ii. Tax Type: StateOrProvince
      iii. Tax Amount: 0.06
      iv. Tax Flag: B
      v. Tax Percent: 2
@@ -112,25 +70,12 @@
      vii. Tax Authority: NC
      viii. Taxable Amount: 2.79
 50. Item Tax 3:
-     ii. Tax Type: StateOrProvince
      iii. Tax Amount: 0.03
      iv. Tax Flag: B
      v. Tax Percent: 2
      vi. Tax Description: **** NC 2% TAX
      vii. Tax Authority: NC
      viii. Taxable Amount: 1.52
-51. Detailed TransactionData 1:
-     i. Attribute Type: Other
-     ii. Attribute Description: foodstampable
-     iii. AttributeData: true
-51. Detailed TransactionData 2:
-     i. Attribute Type: Other
-     ii. Attribute Description: foodstampable
-     iii. AttributeData: true
-51. Detailed TransactionData 3:
-     i. Attribute Type: Other
-     ii. Attribute Description: foodstampable
-     iii. AttributeData: true
 52. Tender Type Date:
      i. Tender Entry Method: *** Not found
      ii. Tender Type: CASH
@@ -146,9 +91,8 @@
           5. Response Code: *** Not found
           6. Response Message: *** Not found
           7. Display Message: *** Not found
-          8. Echo Data: *** Source unknown
 53. FinalTaxLines 1:
-     i. Tax Amount: 0.03
+     i. Tax Amount: .13
      ii. Tax Percent: 2
      iii. Tax Description: **** NC 2% TAX
      iv. Tax Detail Number: 1
@@ -159,15 +103,17 @@
      iii. Discount Total Amount: 6.64
      iv. Total Amount: 6.77
      v. Change: .00
-55. Transaction Document
-          i. Document Name: *** Source unknown
-          ii. Document Type: E-RECEIPT
-          iii. Document Ref Id: *** Source unknown
-          iv. Document Media Type: HTML
-          v. Mime Content Type: text/html
-          vi. Docu Capture Date Time: *** Source unknown
-          vii.	Document Date: *** Source unknown
+
+> CONFIRMATION
+> Total sold (calculated): 7.07
+> minus
+> Total Discount (calculated): 0.43
+> Subtotal (calculated): 7.07 - 0.43 = 6.64 
+> Tax (extracted) .13
+> 6.64 + .13 = 6.77 (extracted)
+> Balance = 6.77
+>>>>> Data extraction successful!
 *******************************************************************
                                TIMES                               
 *******************************************************************
-Record processing time: 0.006 seconds
+Record processing time: 0.005 seconds
