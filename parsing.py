@@ -558,22 +558,29 @@ if __name__ == "__main__":
     captured_output = StringIO() 
     sys.stdout = captured_output 
 
-    receipt_text = sys.argv[1]
     checkboxes_json = sys.argv[2] 
     mode = sys.argv[3]
     
     checkboxes = json.loads(checkboxes_json) 
     
-    
-
     try: 
-        start_get_transaction = time.time()
-        data = GetTransaction(qty)
-        end_get_transaction = time.time()
-        print(f"Time for GetTransaction: {end_get_transaction - start_get_transaction:.2f} seconds")
-        
         if mode == 'onlyOne':
+            receipt_text = sys.argv[1]
+            
+            start_processing = time.time()
+            print(f"*******************************************************************")
+            print(f"                        TRANSACTION id: N?A                        ")
+            print(f"*******************************************************************")
+            result = ReadTransaction(receipt_text, checkboxes)  
+            end_processing = time.time()  
 
+            print(f"*******************************************************************")
+            print(f"                               TIMES                               ")
+            print(f"*******************************************************************")
+            processing_time = end_processing - start_processing
+            print(f"Record processing time: {processing_time:.3f} seconds")
+            
+        elif mode == 'database':  
             start_db = time.time()
             data = GetTransaction(qty)  # Llama a la función para traer los registros
             end_db = time.time()
@@ -586,21 +593,18 @@ if __name__ == "__main__":
                     print(f"*******************************************************************")
                     result = ReadTransaction(item['param_value'], checkboxes)   
             
-            end_processing = time.time()     
-        elif mode == 'database':  
-            print(f"llamar a BD")
+            print(f"*******************************************************************")
+            print(f"                               TIMES                               ")
+            print(f"*******************************************************************")
+            db_time = end_db - start_db
+            print(f"Database reading time: {db_time:.3f} seconds")
+            processing_time = end_processing - start_processing
+            print(f"Record processing time: {processing_time:.3f} seconds")
+            end_processing = time.time()  
 
-        end_loop = time.time()
-        print(f"*******************************************************************")
-        print(f"                               TIMES                               ")
-        print(f"*******************************************************************")
-        db_time = end_db - start_db
-        print(f"Database reading time: {db_time:.3f} seconds")
-        processing_time = end_processing - start_processing
-        print(f"Record processing time: {processing_time:.3f} seconds")
     finally:
         sys.stdout = original_stdout
 
     with open(output_file, "w", encoding="utf-8") as file:
         file.write(captured_output.getvalue())
-    #print(captured_output.getvalue())
+    print(captured_output.getvalue())
