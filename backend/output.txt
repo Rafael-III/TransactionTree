@@ -1,87 +1,595 @@
 *******************************************************************
-                        TRANSACTION id: N?A                        
+                        TRANSACTION id: N/A                        
 *******************************************************************
-4. Transaction Date: 2021-01-14
-5. Transaction Time: 12:41:00
-13. Address 1: 1220 4th Street SW, 1st Floor
-14. City: Hickory
+[{'taxAmount': '2.31', 'taxPercent': '2', 'taxDescription': '**** NC 2% TAX', 'taxDetailNumber': 1, 'taxRuleCode': 'NC'}]
+4. Transaction Date: 2024-03-13
+5. Transaction Time: 21:48:00
+13. Address 1: 687 Mills Park Drive
+14. City: Cary
 15. State Code: NC
-16. Store Zip: 28602
-19. Store Phone Number: 828-725-4100
-36. Total Amount: 6.77
-36. Items Soldt: 7.07
+16. Store Zip: 27519
+19. Store Phone Number: 919-297-2995
+36. Total Amount: 117.87
+36. Items Soldt: 139.97000000000006
 38. detailedTransactionData 1:
      40. Product Id: *** Transformation unclear
-     41. Description: SMUCKERS JELLY
+     41. Description: BEECHNUT BABY
      42. Quantity Sold Type: EACH
      43. Quantity Sold: 1
-     45. Dollar Amount: 2.59
+     45. Dollar Amount: 1.49
 38. detailedTransactionData 2:
      40. Product Id: *** Transformation unclear
-     41. Description: LIBBYS PUMPKIN
+     41. Description: BEECHNUT BABY
      42. Quantity Sold Type: EACH
      43. Quantity Sold: 1
-     45. Dollar Amount: 2.79
+     45. Dollar Amount: 1.39
 38. detailedTransactionData 3:
      40. Product Id: *** Transformation unclear
-     41. Description: LFS MANDARINS
+     41. Description: BEECHNUT BABY
      42. Quantity Sold Type: EACH
      43. Quantity Sold: 1
-     45. Dollar Amount: 1.69
-46. Discount Dollar Amount: 0.09
-47. Ext Dollar Amount: 2.5
-48. Return Amount: 2.5
+     45. Dollar Amount: 1.39
+38. detailedTransactionData 4:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT BABY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.39
+38. detailedTransactionData 5:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT BABY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.49
+38. detailedTransactionData 6:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT BABY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.39
+38. detailedTransactionData 7:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT BABY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.39
+38. detailedTransactionData 8:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT BABY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.39
+38. detailedTransactionData 9:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT STAGE 1
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.39
+38. detailedTransactionData 10:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT BABY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.39
+38. detailedTransactionData 11:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT BABY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.49
+38. detailedTransactionData 12:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT ORGANIC
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.49
+38. detailedTransactionData 13:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT BABY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.49
+38. detailedTransactionData 14:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT BABY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.39
+38. detailedTransactionData 15:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT BABY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.49
+38. detailedTransactionData 16:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT BABY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.39
+38. detailedTransactionData 17:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT STAGE 1
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.39
+38. detailedTransactionData 18:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT ORGANIC
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.49
+38. detailedTransactionData 19:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT BABY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.39
+38. detailedTransactionData 20:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT BABY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.39
+38. detailedTransactionData 21:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT ORGANIC
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.49
+38. detailedTransactionData 22:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT BABY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.49
+38. detailedTransactionData 23:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT BABY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.39
+38. detailedTransactionData 24:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT BABY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.39
+38. detailedTransactionData 25:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT BABY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.39
+38. detailedTransactionData 26:
+     40. Product Id: *** Transformation unclear
+     41. Description: BEECHNUT BABY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.39
+38. detailedTransactionData 27:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERBER 2ND FOOD
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.99
+38. detailedTransactionData 28:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERBER 2ND FOODS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.99
+38. detailedTransactionData 29:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERBER VEG 8OZ
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.99
+38. detailedTransactionData 30:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERBER FRUIT 8OZ
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.99
+38. detailedTransactionData 31:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERBER VEG 8OZ
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.99
+38. detailedTransactionData 32:
+     40. Product Id: *** Transformation unclear
+     41. Description: GB 2ND FOODS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.99
+38. detailedTransactionData 33:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERBER BABY FOOD
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.99
+38. detailedTransactionData 34:
+     40. Product Id: *** Transformation unclear
+     41. Description: PLUM 2ND APL SPI
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.95
+38. detailedTransactionData 35:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERBER BABY FOOD
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.99
+38. detailedTransactionData 36:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERBER BABY FOOD
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.99
+38. detailedTransactionData 37:
+     40. Product Id: *** Transformation unclear
+     41. Description: PLUM 2ND APL SPI
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.95
+38. detailedTransactionData 38:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERBER BABY FOOD
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.99
+38. detailedTransactionData 39:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERBER BABY FOOD
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.99
+38. detailedTransactionData 40:
+     40. Product Id: *** Transformation unclear
+     41. Description: XDK-HAPPY BABY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.99
+38. detailedTransactionData 41:
+     40. Product Id: *** Transformation unclear
+     41. Description: HPBBY S2 BAN SWT
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.99
+38. detailedTransactionData 42:
+     40. Product Id: *** Transformation unclear
+     41. Description: PLUM STAGE 2
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.95
+38. detailedTransactionData 43:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERBER BABY FOOD
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.99
+38. detailedTransactionData 44:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERBER BABY FOOD
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.99
+38. detailedTransactionData 45:
+     40. Product Id: *** Transformation unclear
+     41. Description: GB 2ND FOODS
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.99
+38. detailedTransactionData 46:
+     40. Product Id: *** Transformation unclear
+     41. Description: BCHNUT BEEF
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 47:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERB BEEF&amp;GRAVY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.59
+38. detailedTransactionData 48:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERB HAM&amp;GRAVY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.59
+38. detailedTransactionData 49:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERB BEEF&amp;GRAVY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.59
+38. detailedTransactionData 50:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERB BEEF&amp;GRAVY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.59
+38. detailedTransactionData 51:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERB HAM&amp;GRAVY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.59
+38. detailedTransactionData 52:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERB BEEF&amp;GRAVY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.59
+38. detailedTransactionData 53:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERB CHK&amp;GRAVY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.59
+38. detailedTransactionData 54:
+     40. Product Id: *** Transformation unclear
+     41. Description: BCHNUT BEEF
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 55:
+     40. Product Id: *** Transformation unclear
+     41. Description: BCHNUT TURKEY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 56:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERB BEEF&amp;GRAVY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.59
+38. detailedTransactionData 57:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERB HAM&amp;GRAVY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.59
+38. detailedTransactionData 58:
+     40. Product Id: *** Transformation unclear
+     41. Description: BCHNUT BEEF
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 59:
+     40. Product Id: *** Transformation unclear
+     41. Description: BCHNUT TURKEY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 60:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERB HAM&amp;GRAVY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.59
+38. detailedTransactionData 61:
+     40. Product Id: *** Transformation unclear
+     41. Description: BCHNUT TURKEY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 62:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERB TURK&amp;GRAVY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.59
+38. detailedTransactionData 63:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERB CHK&amp;GRAVY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.59
+38. detailedTransactionData 64:
+     40. Product Id: *** Transformation unclear
+     41. Description: BCHNUT TURKEY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 65:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERB BEEF&amp;GRAVY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.59
+38. detailedTransactionData 66:
+     40. Product Id: *** Transformation unclear
+     41. Description: BCHNUT TURKEY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 67:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERB BEEF&amp;GRAVY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.59
+38. detailedTransactionData 68:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERB CHK&amp;GRAVY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.59
+38. detailedTransactionData 69:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERB HAM&amp;GRAVY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.59
+38. detailedTransactionData 70:
+     40. Product Id: *** Transformation unclear
+     41. Description: BCHNUT BEEF
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 71:
+     40. Product Id: *** Transformation unclear
+     41. Description: BCHNUT BEEF
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 72:
+     40. Product Id: *** Transformation unclear
+     41. Description: BCHNUT TURKEY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 73:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERB TURK&amp;GRAVY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.59
+38. detailedTransactionData 74:
+     40. Product Id: *** Transformation unclear
+     41. Description: GERB BEEF&amp;GRAVY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.59
+38. detailedTransactionData 75:
+     40. Product Id: *** Transformation unclear
+     41. Description: BCHNUT BEEF
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 76:
+     40. Product Id: *** Transformation unclear
+     41. Description: BCHNUT TURKEY
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 1.55
+38. detailedTransactionData 77:
+     40. Product Id: *** Transformation unclear
+     41. Description: EARTH'S BEST
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 5.49
+38. detailedTransactionData 78:
+     40. Product Id: *** Transformation unclear
+     41. Description: EARTH'S BEST
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 5.49
+38. detailedTransactionData 79:
+     40. Product Id: *** Transformation unclear
+     41. Description: EARTH'S BEST
+     42. Quantity Sold Type: EACH
+     43. Quantity Sold: 1
+     45. Dollar Amount: 5.49
+46. Discount Dollar Amount: 0.49
+47. Ext Dollar Amount: -0.49
+48. Return Amount: -0.49
 49. Item Discounts
-     iii. Discount Percent: 0.03
-     iv. Discount Amount: 0.09
-     v. Discount Description: SMUCKERS JELLY
+     iii. Discount Percent: 0.49
+     iv. Discount Amount: 0.49
+     v. Discount Description:      GB 2ND FOODS
      vi. Discount Reason Code: SC
      viii. PrintLine: -B
-46. Discount Dollar Amount: 0.17
-47. Ext Dollar Amount: 1.52
-48. Return Amount: 1.52
+46. Discount Dollar Amount: 0.49
+47. Ext Dollar Amount: -0.49
+48. Return Amount: -0.49
 49. Item Discounts
-     iii. Discount Percent: 0.1
-     iv. Discount Amount: 0.17
-     v. Discount Description: LFS MANDARINS
+     iii. Discount Percent: 0.49
+     iv. Discount Amount: 0.49
+     v. Discount Description:      GERBER BABY FOOD
      vi. Discount Reason Code: SC
      viii. PrintLine: -B
-46. Discount Dollar Amount: 0.17
-47. Ext Dollar Amount: 1.52
-48. Return Amount: 1.52
+46. Discount Dollar Amount: 0.49
+47. Ext Dollar Amount: -0.49
+48. Return Amount: -0.49
 49. Item Discounts
-     iii. Discount Percent: 0.1
-     iv. Discount Amount: 0.17
-     v. Discount Description: LFS MANDARINS
+     iii. Discount Percent: 0.49
+     iv. Discount Amount: 0.49
+     v. Discount Description:      GERBER BABY FOOD
      vi. Discount Reason Code: SC
      viii. PrintLine: -B
-50. Item Tax 1:
-     iii. Tax Amount: 0.05
-     iv. Tax Flag: B
-     v. Tax Percent: 2
-     vi. Tax Description: **** NC 2% TAX
-     vii. Tax Authority: NC
-     viii. Taxable Amount: 2.5
-50. Item Tax 2:
-     iii. Tax Amount: 0.06
-     iv. Tax Flag: B
-     v. Tax Percent: 2
-     vi. Tax Description: **** NC 2% TAX
-     vii. Tax Authority: NC
-     viii. Taxable Amount: 2.79
-50. Item Tax 3:
-     iii. Tax Amount: 0.03
-     iv. Tax Flag: B
-     v. Tax Percent: 2
-     vi. Tax Description: **** NC 2% TAX
-     vii. Tax Authority: NC
-     viii. Taxable Amount: 1.52
-52. Tender Type Date:
-     i. Tender Entry Method: *** Not found
-     ii. Tender Type: CASH
-     iii. Account Number: *** Not found
+46. Discount Dollar Amount: 0.49
+47. Ext Dollar Amount: -0.49
+48. Return Amount: -0.49
+49. Item Discounts
+     iii. Discount Percent: 0.49
+     iv. Discount Amount: 0.49
+     v. Discount Description:      GERBER BABY FOOD
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 10.0
+47. Ext Dollar Amount: N/A
+48. Return Amount: N/A
+49. Item Discounts
+     iii. Discount Percent: N/A
+     iv. Discount Amount: 10.00
+     v. Discount Description:      Benefit
+     vi. Discount Reason Code: MP
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.49
+47. Ext Dollar Amount: -0.49
+48. Return Amount: -0.49
+49. Item Discounts
+     iii. Discount Percent: 0.49
+     iv. Discount Amount: 0.49
+     v. Discount Description:      GERBER BABY FOOD
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.49
+47. Ext Dollar Amount: -0.49
+48. Return Amount: -0.49
+49. Item Discounts
+     iii. Discount Percent: 0.49
+     iv. Discount Amount: 0.49
+     v. Discount Description:      GERBER BABY FOOD
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.49
+47. Ext Dollar Amount: -0.49
+48. Return Amount: -0.49
+49. Item Discounts
+     iii. Discount Percent: 0.49
+     iv. Discount Amount: 0.49
+     v. Discount Description:      GERBER BABY FOOD
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.49
+47. Ext Dollar Amount: -0.49
+48. Return Amount: -0.49
+49. Item Discounts
+     iii. Discount Percent: 0.49
+     iv. Discount Amount: 0.49
+     v. Discount Description:      GERBER BABY FOOD
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 0.49
+47. Ext Dollar Amount: -0.49
+48. Return Amount: -0.49
+49. Item Discounts
+     iii. Discount Percent: 0.49
+     iv. Discount Amount: 0.49
+     v. Discount Description:      GB 2ND FOODS
+     vi. Discount Reason Code: SC
+     viii. PrintLine: -B
+46. Discount Dollar Amount: 10.0
+47. Ext Dollar Amount: N/A
+48. Return Amount: N/A
+49. Item Discounts
+     iii. Discount Percent: N/A
+     iv. Discount Amount: 10.00
+     v. Discount Description:      Benefit
+     vi. Discount Reason Code: MP
+     viii. PrintLine: -B
+52. Tender Type Date 1:
+     i. Tender Entry Method: Manual
+     ii. Tender Type: WICCheck
+     iii. Account Number: ************4961
      iv. Auth Code: *** Not found
-     v. Total Amount: 6.77
+     v. Total Amount: 115.56
      vi. Tender Reference: *** Not found
      vii. Payment Response:
           1. Response IDe: *** Not found
@@ -92,28 +600,36 @@
           6. Response Message: *** Not found
           7. Display Message: *** Not found
 53. FinalTaxLines 1:
-     i. Tax Amount: .13
+     i. Tax Amount: 2.31
      ii. Tax Percent: 2
      iii. Tax Description: **** NC 2% TAX
      iv. Tax Detail Number: 1
      v. Tax Rule Code: NC
 54. Totals Transaction Data:
-     i. Sub Total Amount: 6.77 - 0.13 = 6.64
-     ii. Discount Total: .43
-     iii. Discount Total Amount: 6.64
-     iv. Total Amount: 6.77
+     i. Sub Total Amount: 117.87 - 2.31 = 115.56
+     ii. Discount Total: 24.41
+     iii. Discount Total Amount: 115.56
+     iv. Total Amount: 117.87
      v. Change: .00
+55. Extra Data Customer:
+     i. Name:  Chad
+     ii. Account:  XXXXXXX5498
+     iii. Earnings:  0.69
+     iv. Rewards Balance:  0.69
+     v. Next Reward:  13.54
+     vi. Rewards Card:  #XXXXXXX5498
+     vii. Expiring On:  04/12/2024
 
 > CONFIRMATION
-> Total sold (calculated): 7.07
+> Total sold (calculated): 139.97
 > minus
-> Total Discount (calculated): 0.43
-> Subtotal (calculated): 7.07 - 0.43 = 6.64 
-> Tax (extracted) .13
-> 6.64 + .13 = 6.77 (extracted)
-> Balance = 6.77
+> Total Discount (calculated): 24.41
+> Subtotal (calculated): 139.97 - 24.41 = 115.56 
+> Tax (extracted) 2.31
+> 115.56 + 2.31 = 117.87 (extracted)
+> Balance = 117.87
 >>>>> Data extraction successful!
 *******************************************************************
                                TIMES                               
 *******************************************************************
-Record processing time: 0.005 seconds
+Record processing time: 0.011 seconds

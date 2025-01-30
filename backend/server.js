@@ -29,14 +29,13 @@ app.get('/dadabase', (req, res) => {
 });
 
 app.post('/process', (req, res) => {
-    const { text, checkboxes, mode } = req.body; // Recibir texto y checkboxes desde el frontend
+    const { text, checkboxes, mode } = req.body;
 
-    // Validación del campo 'text'
-    if ((!text || typeof text !== 'string' || text.trim() === '') && mode == 'onlyOne'){
+    // Validación de entrada
+    if ((!text || typeof text !== 'string' || text.trim() === '') && mode === 'onlyOne') {
         return res.status(400).json({ error: 'El campo "text" es inválido o está vacío' });
     }
 
-    // Validación del campo 'checkboxes'
     if (!checkboxes || typeof checkboxes !== 'object') {
         return res.status(400).json({ error: 'El campo "checkboxes" es inválido o está vacío' });
     }
@@ -45,24 +44,35 @@ app.post('/process', (req, res) => {
         return res.status(400).json({ error: 'El campo "mode" es inválido o está vacío' });
     }
 
-    // Convierte los checkboxes a un formato adecuado para el script de Python
-    const checkboxesArg = JSON.stringify(checkboxes);
+    // Crear un objeto JSON con todos los datos
+    const inputData = JSON.stringify({ text, checkboxes, mode });
 
-    // Llama al script de Python pasando el texto y los checkboxes como argumentos
-    const pythonProcess = spawn('python', ['../parsing.py', text, checkboxesArg, mode]);
+    // Ejecutar el script de Python
+    const pythonProcess = spawn('python', ['../parsing.py']);
+
+    // Escribir los datos en stdin del script
+    pythonProcess.stdin.write(inputData);
+    pythonProcess.stdin.end();
 
     let result = '';
+
+    // Leer la salida del script
     pythonProcess.stdout.on('data', (data) => {
         result += data.toString();
     });
 
+    // Manejar errores en el script
     pythonProcess.stderr.on('data', (data) => {
         console.error(`Error en el script de Python: ${data}`);
-        res.status(500).json({ error: 'Error al procesar el texto y checkboxes' });
+        res.status(500).json({ error: 'Error al procesar los datos' });
     });
 
-    pythonProcess.on('close', () => {
-        res.json({ transformed_text: result.trim() }); // Envía el resultado al frontend
+    // Finalizar el proceso
+    pythonProcess.on('close', (code) => {
+        if (code !== 0) {
+            return res.status(500).json({ error: `El script terminó con el código ${code}` });
+        }
+        res.json({ transformed_text: result.trim() });
     });
 });
 
