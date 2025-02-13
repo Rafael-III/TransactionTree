@@ -3,6 +3,7 @@ import './App.css';
 
 const App = () => {
     const [userInput, setUserInput] = useState('');
+    const [qty, setqty] = useState('0');
     const [transformedText, setTransformedText] = useState('');
     const [checkboxes, setCheckboxes] = useState({
         extractDataCheckbox: true,
@@ -26,13 +27,17 @@ const App = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        const requestData = { text: userInput, checkboxes, mode: inputMode, qty };
+
+        console.log("📤 Enviando datos al backend:", requestData); 
+
         try {
             const response = await fetch('http://127.0.0.1:5000/process', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ text: userInput, checkboxes, mode: inputMode }),
+                body: JSON.stringify({ text: userInput, checkboxes, mode: inputMode, qty }),
             });
 
             const data = await response.json();
@@ -64,6 +69,8 @@ const App = () => {
                                     Select how many transactions you want to analyze:
                                 </span>
                                 <input
+                                    value={qty}
+                                    onChange={(e) => setqty(e.target.value)}
                                     type="text"
                                     placeholder="0000"
                                     maxLength="4"

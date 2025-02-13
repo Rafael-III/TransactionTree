@@ -29,7 +29,7 @@ app.get('/dadabase', (req, res) => {
 });
 
 app.post('/process', (req, res) => {
-    const { text, checkboxes, mode } = req.body;
+    const { text, checkboxes, mode, qty } = req.body;
 
     // Validación de entrada
     if ((!text || typeof text !== 'string' || text.trim() === '') && mode === 'onlyOne') {
@@ -44,8 +44,13 @@ app.post('/process', (req, res) => {
         return res.status(400).json({ error: 'El campo "mode" es inválido o está vacío' });
     }
 
+    if (!qty || isNaN(qty)) {
+        return res.status(400).json({ error: 'El campo "qty" es inválido o está vacío' });
+    }
+    
+
     // Crear un objeto JSON con todos los datos
-    const inputData = JSON.stringify({ text, checkboxes, mode });
+    const inputData = JSON.stringify({ text, checkboxes, mode, qty });
 
     // Ejecutar el script de Python
     const pythonProcess = spawn('python', ['../parsing.py']);

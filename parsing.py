@@ -3,8 +3,13 @@ import re
 import sys
 from io import StringIO
 import json
-from backend.script.db import GetTransaction 
+from backend.script.db import Database
 import time
+import logging
+
+db = Database()
+
+logging.basicConfig(filename="missing_data.log", level=logging.WARNING, format="%(asctime)s - %(message)s")
 
 ########################################################
 ###################### PATTERNS ########################
@@ -13,6 +18,10 @@ import time
 #ej: <line>11/13/24 11:02 0276 01 0011 197398    </line><line>(\d{2}/\d{2}/\d{2})[\d|\s|:]+</line>
 #transactionDateTimePattern = re.compile(r'<line>(\d{1,2}/\d{1,2}/\d{2,4})\s(\d{2}:\d{2})\s\d{2}[\d|\s]+</line>')
 transactionDateTimePattern = re.compile(r'<line> *(\d{1,2}/\d{1,2}/\d{2,4}) +(\d{2}:\d{2}) +\d{2}.*</line>')
+
+# patron (??. Name)
+#ej: <line>    Family-Owned &amp; Carolinas-Based    </line>
+namePattern = re.compile(r'<line>\s+(.*?) +</line>')
 
 # patron (13. Address1)
 #ej: <line>            120 Forum Drive           </line>
@@ -28,7 +37,7 @@ storePhoneNumberPattern = re.compile(r'<line> +([\d-]+) +</line>')
 
 # patron (36. TotalAmount)
 #ej: <line>          **** BALANCE         81.08  </line>
-totalAmountPattern = re.compile(r'<line> +\*{4} BALANCE +([\d,]*\d+\.\d{2}) +</line>')
+totalAmountPattern = re.compile(r'<line> +\*{4} BALANCE +([\d,]*\.\d{2}-?) +</line>')
 
 # patron (38. DetailedTransactionDataPattern ) 38, 39, 40, 41, 42, 44 & 45
 #ej: <line>        SANTA CRUZ LIME         5.99 B</line>
@@ -46,7 +55,9 @@ itemsSoldWeightPattern = re.compile(r'<line>.+?lb @ ((?:\d*\.\d{1,2})) .+</line>
 # patron (46. DiscountDollarAmount & 49. ItemDiscounts) 
 #ej: <line>SC      KRAFT DRESSING          1.29-B</line>
 #    <line>CL      PORK BONELESS           4.85-B</line>
-itemDiscountsPattern = re.compile(r'<line> *(SC|MC|MP|CL|[A-Z]{2})[A-Z ](.*?) *(\d*\.\d{2})(-(?:[A-Z]| ))</line>')
+#    <line>SC MO   GROCERY                  .75 B</line>
+itemDiscountsPattern = re.compile(r'<line> *(SC|MC|MP|CL|[A-Z]{2})[A-Z ]{6}(.*?) *(\d*\.\d{2}) *(-?[BFT])</line>')
+# itemDiscountsPattern = re.compile(r'<line> *(SC|MC|MP|CL|[A-Z]{2})[A-Z ]{6}(.*?) *(\d*\.\d{2})(-(?:[A-Z]| ))</line>')
 #itemDiscountsPattern = re.compile(r'<line> *(?:SC|MC|MP|CL|[A-Z]{2})\s{6}(?:.*?) *(\d*\.\d{2})(?:-[A-Z])</line>')
 
 # patron INICIO DESCUENTO (no se usa)
@@ -59,7 +70,7 @@ tenderEntryMethodPattern = re.compile(r'<line> *(CHIP|Contactless|Swiped) +</lin
 
 # pattern (52. TenderTypeDate ii. TenderType & v. TotalAmount) T
 #ej: <line>VF      Debit     USD$         81.08  </line>
-tenderTypeAndAmountPattern = re.compile(r'<line>.*?(?:<strong> )?(VF      MasterCd CR|VF      WIC Tender|VF      EBT FS|VF      Debit|        PAYEEZY|        OUTSIDE CREDIT|VF      Visa CR|VF MO   Visa CR|VF      AMEX CR|VF MO   Debit|   MO   CASH|        CASH|VF      Gift Card|VF MO   Gift Card|VF MO   EBT FS) +(?: +USD\$ +)? +(\d*\.\d{1,2}|\d+) *(?:</strong>)?.*?</line>')
+tenderTypeAndAmountPattern = re.compile(r'<line>.*?(?:<strong> )?(VF      MasterCd CR|VF      WIC Tender|VF      EBT FS|VF      Debit|        PAYEEZY|        OUTSIDE CREDIT|VF      Visa CR|VF MO   Visa CR|VF      AMEX CR|VF MO   Debit|   MO   CASH|        CASH|VF      Gift Card|VF MO   Gift Card|VF MO   EBT FS) +(?:USD\$)? +(\d*\.\d{1,2}|\d+) *(?:</strong>)?.*?</line>')
 
 # pattern (52. TenderTypeDate iii. AccountNumber) 
 #ej: <line>        Acct # ************9005       </line>
@@ -100,45 +111,49 @@ displayMessagePattern = re.compile(r'<line> *(APPROVED|DECLINED) +</line>')
 # patron (53.	FinalTaxLines)
 #ej: <line>   **** SC 2% TAX         1.59        </line>
 #    <line>   **** NC 7% SALES TAX   9.19        </line>
-finalTaxLinesPattern1 = re.compile(r'<line> +(\*{4} (SC|NC) (\d*\.\d{1,2}|\d+)% (?:[\w\s]+?)) +(\d*\.\d{1,2}|\d+) +</line>')
+#    <line>   **** NC 7% SALES TAX   -.16        </line>
+finalTaxLinesPattern1 = re.compile(r'<line> +(\*{4} (SC|NC) (\d*\.\d{1,2}|\d+)% (?:[\w\s]+?)) +(-?\d*\.\d{1,2}|-?\d+) +</line>')
+#finalTaxLinesPattern1 = re.compile(r'<line> +(\*{4} (SC|NC) (\d*\.\d{1,2}|\d+)% (?:[\w\s]+?)) +(\d*\.\d{1,2}|\d+) +</line>')
 #    <line>   **** 2% NC TAX         5.28        </line>
-finalTaxLinesPattern2 = re.compile(r'<line> +(\*{4} (\d*\.\d{1,2}|\d+)% (SC|NC) (?:[\w\s]+?)) +(\d*\.\d{1,2}|\d+) +</line>')
+#    <line>   **** 2% NC TAX         -.28        </line>
+finalTaxLinesPattern2 = re.compile(r'<line> +(\*{4} (\d*\.\d{1,2}|\d+)% (SC|NC) (?:[\w\s]+?)) +(-?\d*\.\d{1,2}|-?\d+) +</line>')
+# finalTaxLinesPattern2 = re.compile(r'<line> +(\*{4} (\d*\.\d{1,2}|\d+)% (SC|NC) (?:[\w\s]+?)) +(\d*\.\d{1,2}|\d+) +</line>')
 
 # patron (54. TotalsTransactionData ii.	DiscountTotal)
 #ej: <line><strong>TODAY'S SAVINGS TOTAL:      6.27      </strong></line>
-discountTotalPattern = re.compile(r'<line> *<strong>TODAY\'S SAVINGS TOTAL: +(\d*\.\d*) +</strong> *</line>')
+savingTotalPattern = re.compile(r'<line> *<strong>TODAY\'S SAVINGS TOTAL: +(\d*\.\d*) +</strong> *</line>')
 
 # patron (54. TotalsTransactionData v.	Change)
 #ej: <line>        CHANGE                   .00  </line>
 changePattern = re.compile(r'<line> +CHANGE +(\d*\.\d*) +</line>')
 
-# patron (55. Extra customer i. Name)
+# patron (55. customer i. Name)
 #ej: <line>                      Name: James                           </line>
-extraNamePattern = re.compile(r'<line> *Name: *(.*?) +</line>')
+customerNamePattern = re.compile(r'<line> *Name: *(.*?) +</line>')
 
-# patron (55. Extra customer ii. Account)
+# patron (55. customer ii. Account)
 #ej: <line>                      Account: XXXXXXX6788                  </line>
-extraAccountPattern = re.compile(r'<line> *Account: *(.*?) +</line>')
+customerAccountPattern = re.compile(r'<line> *Account: *(.*?) +</line>')
 
-# patron (55. Extra customer iii. Earnings This Transaction)
+# patron (55. customer iii. Earnings This Transaction)
 #ej: <line>                      Earnings This Transaction: 0.00       </line>
-extraEarningsPattern = re.compile(r'<line> *Earnings This Transaction: *(\d*\.\d*) +</line>')
+customerEarningsPattern = re.compile(r'<line> *Earnings This Transaction: *(\d*\.\d*) +</line>')
 
-# patron (55. Extra customer iv. Current Gas Rewards Balance)
+# patron (55. customer iv. Current Gas Rewards Balance)
 #ej: <line>                      Current Gas Rewards Balance: 0.00       </line>
-extraRewardsBalancePattern = re.compile(r'<line> *Current Gas Rewards Balance: *(\d*\.\d*) +</line>')
+customerRewardsBalancePattern = re.compile(r'<line> *Current Gas Rewards Balance: *(\d*\.\d*) +</line>')
 
-# patron (55. Extra customer v. Spend To Get Your Next Reward)
+# patron (55. customer v. Spend To Get Your Next Reward)
 #ej: <line>                      Spend To Get Your Next Reward: 0.00       </line>
-extraNextRewardPattern = re.compile(r'<line> *Spend To Get Your Next Reward: *(\d*\.\d*) +</line>')
+customerNextRewardPattern = re.compile(r'<line> *Spend To Get Your Next Reward: *(\d*\.\d*) +</line>')
 
-# patron (55. Extra customer vi. rewards card)
+# patron (55. customer vi. rewards card)
 #ej: <line>                      YOUR REWARDS CARD #XXXXXXX6788        </line>
-extraRewardsCardPattern = re.compile(r'<line> *YOUR REWARDS CARD *(.*?) +</line>')
+customerRewardsCardPattern = re.compile(r'<line> *YOUR REWARDS CARD *(.*?) +</line>')
 
-# patron (55. Extra customer vii. Expiring On)
+# patron (55. customer vii. Expiring On)
 #ej: <line>                      Expiring On: 02/06/2021               </line>
-extraExpiringPattern = re.compile(r'<line> *Expiring On: *(\d+/\d+/\d+) +</line>')
+customerExpiringPattern = re.compile(r'<line> *Expiring On: *(\d+/\d+/\d+) +</line>')
 
 # patternB = r"<line>.*?(\d*\.\d{2}) (?:B|F|T)</line>"
 # pattern_B = r"<line>.*?(\d*\.\d{2})-(?:B|F|T)</line>"
@@ -177,6 +192,8 @@ tenderTypeMapping = {
 ########################################################
 ############ INICIALIZACION DE VARIABLES ###############
 ########################################################
+error = []
+
 result = {}
 productMapping  = {}
 productExtDollarAmountMapping = {}
@@ -233,63 +250,63 @@ documentDate = '*** Source unknown' #55.	TransactionDocument a.	Document vii.	Do
 productId = '*** Transformation unclear' #40.	ProductId
 returnAmount = '*** Extraction unclear' #48.	ReturnAmount
 discountPercent = '*** Transformation unclear' #49.	ItemDiscounts iii.	DiscountPercent
+    
+def ReadTransaction(trasnsaction, checkboxes, idTrasaccionOriginal):
+    found_name = found_address = False
+    item_data = {"item": []} 
+    itemSold = 0
+    discount_data = {"discount": []} 
+    total_discount = 0
+    taxDetailNumber = 0
+    tax_data = {"tax": []} 
+    total_tax = 0
+    tender_data = {"tender": []} 
+    total_tender = 0
+    tender_wic = False
+    error = []
 
-def ReadTransaction(receipt_text, checkboxes):
-        itemSold = 0
-        totalDescuento = 0
-        taxDetailNumber = 0
-        totalTax = 0     
-        countTender = 0 
+    store_data = {}
+    totalAmount = 0.0
+    change = None
+    savingTotal = None
+    transactionDate = None
+    transactionTime = None
+    customerName = None
+    customerAccount = None
+    customerEarnings = None
+    customerRewardsBalance = None
+    customerNextReward = None
+    customerRewardsCard = None
+    customerExpiring = None
 
-        if not receipt_text:
-            print("Error: No se proporcionó ningún texto para procesar.")
-            return
+    balanceCorrect = True
+    tenderCorrect = True
+    
+    trasnsaction = trasnsaction.replace("&amp;", "&")
+    lines = trasnsaction.splitlines()
+    
+    try:
+        for line_index, line in enumerate(lines):
 
-        result = {}  # Diccionario para almacenar los resultados según las reglas
+            #---------------------------- START STORE ----------------------------------
+            if not found_name and (nameMatch := namePattern.search(line)):  
+                store_data["name"] = nameMatch.group(1)
+                found_name = True
+            elif not found_address and (addressMatch := addressPattern.search(line)): #Verifica si la línea corresponde al 13. address1
+                store_data["address"] = addressMatch.group(1)
+                found_address = True
+            elif cityStateZipPatternMatch := cityStateZipPattern.search(line): #Verificar si la línea corresponde a 14. City & 15. StateCode & 16. StoreZip
+                store_data["city"] = cityStateZipPatternMatch.group(1)
+                store_data["stateCode"] = cityStateZipPatternMatch.group(2)
+                store_data["storeZip"] = cityStateZipPatternMatch.group(3)
+            elif storePhoneNumberMatch := storePhoneNumberPattern.search(line): #Verificar si la línea corresponde al 19. StorePhoneNumber
+                store_data["storePhoneNumber"] = storePhoneNumberMatch.group(1)
+            #----------------------------- END STORE ------------------------------------
 
-        # matches = re.findall(patternB, receipt_text)
-
-        # # Convertir los valores a flotantes y sumarlos
-        # values = [float(match) for match in matches]
-        # total = sum(values)
-
-        # print(f"Total: {total}")
-
-        # matches = re.findall(pattern_B, receipt_text)
-
-        # # Convertir los valores a flotantes y sumarlos
-        # values = [float(match) for match in matches]
-        # total = sum(values)
-
-        # print(f"Total: {total}")
-
-        lines = receipt_text.splitlines()
-        # try:
-        for i, line in enumerate(lines):
-            if transactionDateTimeMatch := transactionDateTimePattern.search(line): #Verifica si la línea corresponde al 4. TransactionDate & 5. TransactionTime
-                transactionDate = datetime.strptime(transactionDateTimeMatch.group(1), '%m/%d/%y').strftime('%Y-%m-%d')
-                transactionTime = datetime.strptime(transactionDateTimeMatch.group(2), '%H:%M').strftime('%H:%M:00')
-
-                result["transactionDate"] = transactionDate
-                result["transactionTime"] = transactionTime
-
-            elif i == 1:
-                if addressMatch := addressPattern.search(line): #Verifica si la línea corresponde al 13. address1
-                    result["address1"] = addressMatch.group(1)            
-
-            elif i == 2: 
-                if cityStateZipPatternMatch := cityStateZipPattern.search(line): #Verificar si la línea corresponde a 14. City & 15. StateCode & 16. StoreZip
-                    result["city"] = cityStateZipPatternMatch.group(1)
-                    result["stateCode"] = cityStateZipPatternMatch.group(2)
-                    result["storeZip"] = cityStateZipPatternMatch.group(3)
-
-            elif i == 3:
-                if storePhoneNumberMatch := storePhoneNumberPattern.search(line): #Verificar si la línea corresponde al 19. StorePhoneNumber
-                    result["storePhoneNumber"] = storePhoneNumberMatch.group(1)
-
+            #---------------------------- START PRODUCT ---------------------------------
             elif detailedTransactionData := detailedTransactionDataPattern.search(line): # Verificar si la línea corresponde a un itemsSold 37, 38, 39, 40, 41, 42, 43, 44 & 45
                 quantitySoldType = 'LBS' if detailedTransactionData.group(1) == 'WT' else 'EACH'
-                quantitySold = itemsSoldWeightPattern.search(lines[i-1]).group(1) if detailedTransactionData.group(1) == 'WT' else '1'
+                quantitySold = itemsSoldWeightPattern.search(lines[line_index-1]).group(1) if detailedTransactionData.group(1) == 'WT' else '1'
                 description = detailedTransactionData.group(2)
                 dollarAmount = float(detailedTransactionData.group(3))
                 taxFlag = detailedTransactionData.group(4)
@@ -297,20 +314,16 @@ def ReadTransaction(receipt_text, checkboxes):
                 itemSold += dollarAmount
                 productMapping[description] = dollarAmount
 
-                # Asegurarse de que "itemsSold" sea una lista
-                if "detailedTransactionData" not in result:
-                    result["detailedTransactionData"] = []
-
-                # Agregar el producto a la lista
-                result["detailedTransactionData"].append({
+                item = {
                     "description": description,
                     "quantitySoldType": quantitySoldType,
                     "quantitySold": quantitySold,
                     "dollarAmount": dollarAmount,
                     "taxFlag": taxFlag
-                })
+                }
 
-
+                item_data["item"].append(item)
+            
             elif detailedTransactionData := detailedTransactionDataPatternAUX.search(line): # Verificar si la línea corresponde a un itemsSold 37, 38, 39, 40, 41, 42, 43, 44 & 45
                 quantitySoldType = detailedTransactionData.group(1)
                 quantitySold = '1'
@@ -321,18 +334,15 @@ def ReadTransaction(receipt_text, checkboxes):
                 itemSold += dollarAmount
                 productMapping[description] = dollarAmount
 
-                # Asegurarse de que "itemsSold" sea una lista
-                if "detailedTransactionData" not in result:
-                    result["detailedTransactionData"] = []
-
-                # Agregar el producto a la lista
-                result["detailedTransactionData"].append({
+                item = {
                     "description": description,
                     "quantitySoldType": quantitySoldType,
                     "quantitySold": quantitySold,
                     "dollarAmount": dollarAmount,
                     "taxFlag": taxFlag
-                })
+                }
+
+                item_data["item"].append(item)
 
             elif discount := itemDiscountsPattern.search(line): # Verificar si la línea corresponde a 46. DiscountDollarAmount & 49. ItemDiscounts
                 discountReasonCode = discount.group(1)
@@ -340,25 +350,28 @@ def ReadTransaction(receipt_text, checkboxes):
                 discountAmount = discountDollarAmount = float(discount.group(3))
                 printLine = discount.group(4)
                 
-                if(discountReasonCode == 'SC'):
-                    discountPercent = round(discountDollarAmount / productMapping.get(discountDescription,1), 2)
+                #hay descuentos que no son negativos
+                if "-" not in printLine:
+                    discountAmount = discountDollarAmount = -abs(discountAmount)
 
+                if(discountReasonCode == 'SC' or discountReasonCode == 'CL' or discountReasonCode == 'RF'):
+                    discountPercent = round(discountDollarAmount / productMapping.get(discountDescription,1), 2)
+                    
                     extDollarAmount = productMapping.get(discountDescription,0) - discountDollarAmount
                     productExtDollarAmountMapping[discountDescription] = extDollarAmount #arreglo de descuentos por nombre de producto
-                elif(discountReasonCode == 'MC'):
-                    discountPercent = "N/A"
-                    extDollarAmount = "N/A"
-                elif(discountReasonCode == 'MP'):
-                    discountPercent = "N/A"
-                    extDollarAmount = "N/A"
+                # elif(discountReasonCode == 'MC'):
+                #     discountPercent = "N/A"
+                #     extDollarAmount = "N/A"
+                # elif(discountReasonCode == 'MP'):
+                #     discountPercent = "N/A"
+                #     extDollarAmount = "N/A"
+                else:
+                    discountPercent = 0.0
+                    extDollarAmount = 0.0
 
-                totalDescuento += discountDollarAmount
+                total_discount += discountDollarAmount
 
-                # Asegurarse de que "discounts" sea una lista
-                if "discount" not in result:
-                    result["discount"] = []
-
-                result["discount"].append({
+                discount = {
                     "discountDollarAmount": discountDollarAmount,
                     "extDollarAmount": extDollarAmount,
                     "discountPercent": discountPercent,
@@ -366,84 +379,12 @@ def ReadTransaction(receipt_text, checkboxes):
                     "discountDescription": discountDescription,
                     "discountReasonCode": discountReasonCode,
                     "printLine": printLine     
-                })
+                }
 
-            elif tenderTypeAndAmountMatch := tenderTypeAndAmountPattern.search(line): #Verifica si la línea corresponde al tender type 52 ii & amount v
-                countTender += 1
+                discount_data["discount"].append(discount)
+            #----------------------------- END PRODUCT ----------------------------------
 
-                # Asegurarse de que "tender" sea una lista
-                if "tender" + str(countTender) not in result:
-                    result["tender" + str(countTender) ] = []
-                
-                result["tenderType"] = tenderTypeMapping.get(tenderTypeAndAmountMatch.group(1), 'OTHER')
-                result["tenderAmount"] = tenderTypeAndAmountMatch.group(2)
-
-                result["tender" + str(countTender) ].append({
-                    "tenderType": tenderTypeMapping.get(tenderTypeAndAmountMatch.group(1), 'OTHER'),
-                    "tenderAmount": tenderTypeAndAmountMatch.group(2)     
-                })
-            
-            elif tenderEntryMethodMatch := tenderEntryMethodPattern.search(line): #Verifica si la línea corresponde al tender type method 52 i
-                #Validar si solo aparece con tarjeta
-                result["tenderEntryMethod"] = tenderEntryMethodMapping.get(tenderEntryMethodMatch.group(1), 'Manual')
-                result.setdefault("tender" + str(countTender), [{}])[0].update({
-                    "tenderEntryMethod": tenderEntryMethodMapping.get(tenderEntryMethodMatch.group(1), 'Manual')
-                })
-
-            elif accountNumberMatch := accountNumberPattern.search(line): #Verifica si la línea corresponde al account number type 52 iii
-                result["accountNumber"] = accountNumberMatch.group(1)
-                result.setdefault("tender" + str(countTender), [{}])[0].update({
-                    "accountNumber": accountNumberMatch.group(1)
-                })
-
-            elif authCodeMatch := authCodePattern.search(line): #Verifica si la línea corresponde al tender type 52 iV
-                result["authCode"] = authCodeMatch.group(1)
-                result.setdefault("tender" + str(countTender), [{}])[0].update({
-                    "authCode": authCodeMatch.group(1)
-                })
-
-            elif tenderReferenceMatch := tenderReferencePattern.search(line): #Verifica si la línea corresponde al tender reference 52 vi
-                result["tenderReference"] = tenderReferenceMatch.group(1)
-                result.setdefault("tender" + str(countTender), [{}])[0].update({
-                    "tenderReference": tenderReferenceMatch.group(1)
-                })
-
-            elif cardTypeMatch := cardTypePattern.search(line): #Verifica si la línea corresponde al tender type 52 vii 2
-                result["cardType"] = cardTypeMatch.group(1)
-                result.setdefault("tender" + str(countTender), [{}])[0].update({
-                    "cardType": cardTypeMatch.group(1)
-                })
-
-            elif isoResCodeMatch := isoResCodePattern.search(line): #Verifica si la línea corresponde al tender type 52 vii 3
-                result["isoResCode"] = isoResCodeMatch.group(1)
-                result.setdefault("tender" + str(countTender), [{}])[0].update({
-                    "isoResCode": isoResCodeMatch.group(1)
-                })
-
-            elif auxResponseMatch := auxResponsePattern.search(line): #Verifica si la línea corresponde al tender type 52 vii 4
-                result["auxResponse"] = auxResponseMatch.group(1)
-                result.setdefault("tender" + str(countTender), [{}])[0].update({
-                    "auxResponse": auxResponseMatch.group(1)
-                })
-
-            elif responseCodeMatch := responseCodePattern.search(line): #Verifica si la línea corresponde al tender type 52 vii 5
-                result["responseCode"] = responseCodeMatch.group(1)
-                result.setdefault("tender" + str(countTender), [{}])[0].update({
-                    "responseCode": responseCodeMatch.group(1)
-                })
-
-            elif responseMessageMatch := responseMessagePattern.search(line): #Verifica si la línea corresponde al tender type 52 vii 6
-                result["responseMessage"] = responseMessageMatch.group(1)
-                result.setdefault("tender" + str(countTender), [{}])[0].update({
-                    "responseMessage": responseMessageMatch.group(1)
-                })
-
-            elif displayMessageMatch := displayMessagePattern.search(line): #Verifica si la línea corresponde al tender type 52 vii 7
-                result["displayMessage"] = displayMessageMatch.group(1)
-                result.setdefault("tender" + str(countTender), [{}])[0].update({
-                    "displayMessage": displayMessageMatch.group(1)
-                })
-
+            #------------------------------- START TAX ----------------------------------
             elif (finalTaxLinesMatch := finalTaxLinesPattern1.search(line)) or (finalTaxLinesMatch := finalTaxLinesPattern2.search(line)): #Verificar si la línea corresponde 53. FinalTaxLines
                 taxDetailNumber += 1
                 taxDescription = finalTaxLinesMatch.group(1)
@@ -451,269 +392,542 @@ def ReadTransaction(receipt_text, checkboxes):
                 taxPercent = finalTaxLinesMatch.group(2) if finalTaxLinesMatch.group(2).isnumeric() else finalTaxLinesMatch.group(3)
                 taxAmount = finalTaxLinesMatch.group(4)
 
-                totalTax += float(taxAmount) 
+                total_tax += float(taxAmount) 
                 
-                # if "itemTax" not in result:
-                #     result["itemTax"] = []
-
-                # for item in result["detailedTransactionData"]:
-                #     dollarAmount = float(item["dollarAmount"])
-                #     taxAmountItem = round(dollarAmount * (float(taxPercent) / 100), 2)
-
-                #     result["itemTax"].append({
-                #         "taxAmount": taxAmountItem,
-                #         "taxFlag": item["taxFlag"],
-                #         "taxPercent": taxPercent,
-                #         "taxDescription": taxDescription,
-                #         "taxAuthority": taxRuleCode,
-                #         "taxableAmount": productExtDollarAmountMapping.get(item["description"], dollarAmount)
-                #     })
-
-                # Asegurarse de que "itemsSold" sea una lista
-                if "finalTaxLines" not in result:
-                    result["finalTaxLines"] = []
-
-                # Agregar el producto a la lista
-                result["finalTaxLines"].append({
+                tax = {
                     "taxAmount": taxAmount,
                     "taxPercent": taxPercent,
                     "taxDescription": taxDescription,
                     "taxDetailNumber": taxDetailNumber,
                     "taxRuleCode": taxRuleCode,
-                })
+                }
 
-                print(result["finalTaxLines"])
+                tax_data["tax"].append(tax)
+            #-------------------------------- END TAX -----------------------------------
 
+            #----------------------------- START BALANCE ---------------------------------
             elif totalAmountMatch := totalAmountPattern.search(line): #Verifica si la línea corresponde 36. TotalAmount
-                #result["totalAmount"] = totalAmountMatch.group(1)
-                result["totalAmount"] = float(totalAmountMatch.group(1).replace(',', ''))
+                totalAmount = totalAmountMatch.group(1).replace(',', '')
+                if totalAmount.endswith("-"):
+                    totalAmount =  -float(totalAmount[:-1]) 
+                else:
+                    totalAmount = float(totalAmount)
+            #------------------------------ END BALANCE ----------------------------------
 
-                #discountTotalAmount = subTotalAmount = float(totalAmount) - totalTax
+            #------------------------------ START TENDER ---------------------------------
+            elif tenderTypeAndAmountMatch := tenderTypeAndAmountPattern.search(line):  
+                tenderType = tenderTypeMapping.get(tenderTypeAndAmountMatch.group(1), 'OTHER')
+                tenderAmount = tenderTypeAndAmountMatch.group(2)
 
-                # result["totalsTransactionData"] = {
-                #     "totalAmount": totalAmount,
-                #     "discountTotalAmount": discountTotalAmount,
-                #     "subTotalAmount": subTotalAmount
-                # }
+                total_tender += float(tenderAmount) 
+                if(tenderType == 'WICCheck'):
+                    tender_wic = True
+                            
+                new_tender = {
+                    "tenderType": tenderType,
+                    "tenderAmount": tenderAmount
+                }
 
-            elif discountTotalMatch := discountTotalPattern.search(line): #Verifica si la línea corresponde 54. TotalsTransactionData ii. DiscountTotal
-                result["discountTotal"] = discountTotalMatch.group(1)
+                if "tender" not in tender_data:
+                    tender_data["tender"] = []  # Si no existe la lista, la creamos
 
+                tender_data["tender"].append(new_tender)  # Agregamos el nuevo pago
+
+            # No dependemos de un pago previo, cada campo se agrega si aparece en la entrada
+            if tenderEntryMethodMatch := tenderEntryMethodPattern.search(line):  
+                if "tender" not in tender_data or not tender_data["tender"]:  
+                    tender_data["tender"] = [{}]  # Si no hay pagos, inicializamos con un diccionario vacío
+
+                tender_data["tender"][-1]["tenderEntryMethod"] = tenderEntryMethodMapping.get(tenderEntryMethodMatch.group(1), 'Manual')
+
+            if accountNumberMatch := accountNumberPattern.search(line):  
+                if "tender" not in tender_data or not tender_data["tender"]:  
+                    tender_data["tender"] = [{}]
+
+                tender_data["tender"][-1]["accountNumber"] = accountNumberMatch.group(1)
+
+            if authCodeMatch := authCodePattern.search(line):  
+                if "tender" not in tender_data or not tender_data["tender"]:  
+                    tender_data["tender"] = [{}]
+
+                tender_data["tender"][-1]["authCode"] = authCodeMatch.group(1)
+
+            if tenderReferenceMatch := tenderReferencePattern.search(line):  
+                if "tender" not in tender_data or not tender_data["tender"]:  
+                    tender_data["tender"] = [{}]
+
+                tender_data["tender"][-1]["tenderReference"] = tenderReferenceMatch.group(1)
+
+            if cardTypeMatch := cardTypePattern.search(line):  
+                if "tender" not in tender_data or not tender_data["tender"]:  
+                    tender_data["tender"] = [{}]
+
+                tender_data["tender"][-1]["cardType"] = cardTypeMatch.group(1)
+
+            if isoResCodeMatch := isoResCodePattern.search(line):  
+                if "tender" not in tender_data or not tender_data["tender"]:  
+                    tender_data["tender"] = [{}]
+
+                tender_data["tender"][-1]["isoResCode"] = isoResCodeMatch.group(1)
+
+            if auxResponseMatch := auxResponsePattern.search(line):  
+                if "tender" not in tender_data or not tender_data["tender"]:  
+                    tender_data["tender"] = [{}]
+
+                tender_data["tender"][-1]["auxResponse"] = auxResponseMatch.group(1)
+
+            if responseCodeMatch := responseCodePattern.search(line):  
+                if "tender" not in tender_data or not tender_data["tender"]:  
+                    tender_data["tender"] = [{}]
+
+                tender_data["tender"][-1]["responseCode"] = responseCodeMatch.group(1)
+
+            if responseMessageMatch := responseMessagePattern.search(line):  
+                if "tender" not in tender_data or not tender_data["tender"]:  
+                    tender_data["tender"] = [{}]
+
+                tender_data["tender"][-1]["responseMessage"] = responseMessageMatch.group(1)
+
+            if displayMessageMatch := displayMessagePattern.search(line):  
+                if "tender" not in tender_data or not tender_data["tender"]:  
+                    tender_data["tender"] = [{}]
+
+                tender_data["tender"][-1]["displayMessage"] = displayMessageMatch.group(1)
+            #------------------------------- END TENDER ----------------------------------
+
+            #------------------------------ START CHANGE ---------------------------------
             elif changeMatch := changePattern.search(line): #Verifica si la línea corresponde 54. TotalsTransactionData v. Change
-                result["change"] = changeMatch.group(1)
+                change = changeMatch.group(1)
+            #-------------------------------- END CHANGE ---------------------------------
 
-            elif extraNameMatch := extraNamePattern.search(line): #Verifica si la línea corresponde 55. Extra customer i. Name
-                result["extraName"] = extraNameMatch.group(1)
-            
-            elif extraAccountMatch := extraAccountPattern.search(line): #Verifica si la línea corresponde 55. Extra customer ii. Account
-                result["extraAccount"] = extraAccountMatch.group(1)
+            #------------------------------ START REWARD ---------------------------------
+            elif savingTotalMatch := savingTotalPattern.search(line): #Verifica si la línea corresponde 54. TotalsTransactionData ii. DiscountTotal
+                savingTotal = savingTotalMatch.group(1)
+            #------------------------------- END REWARD ----------------------------------
 
-            elif extraEarningsMatch := extraEarningsPattern.search(line): #Verifica si la línea corresponde 55. Extra customer iii. Earnings
-                result["extraEarnings"] = extraEarningsMatch.group(1)
+            #------------------------------ START CUSTOMER ---------------------------------
+            elif  customerNameMatch := customerNamePattern.search(line):  # Verifica si la línea corresponde 55. customer i. Name
+                customerName =  customerNameMatch.group(1)
 
-            elif extraRewardsBalanceMatch := extraRewardsBalancePattern.search(line): #Verifica si la línea corresponde 55. Extra customer iv. Rewards Balance
-                result["extraRewardsBalance"] = extraRewardsBalanceMatch.group(1)
+            elif  customerAccountMatch :=  customerAccountPattern.search(line):  # Verifica si la línea corresponde 55. customer ii. Account
+                customerAccount =  customerAccountMatch.group(1)
 
-            elif extraNextRewardMatch := extraNextRewardPattern.search(line): #Verifica si la línea corresponde 55. Extra customer v. Next Reward
-                result["extraNextReward"] = extraNextRewardMatch.group(1)
-            
-            elif extraRewardsCardMatch := extraRewardsCardPattern.search(line): #Verifica si la línea corresponde 55. Extra customer vi. Rewards Card
-                result["extraRewardsCard"] = extraRewardsCardMatch.group(1)
-            
-            elif extraExpiringMatch := extraExpiringPattern.search(line): #Verifica si la línea corresponde 55. Extra customer vi. extra Expiring
-                result["extraExpiring"] = extraExpiringMatch.group(1)
-        
-        print(f"1. TTDR Version: {tTDRVersion}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"2. Application ID: {applicationID}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"3. Merchant Number: {merchantNumber}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"4. Transaction Date: {result.get('transactionDate', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"5. Transaction Time: {result.get('transactionTime', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"6. Entry Type: {entryType}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"7. Trans Id: {transId}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"8. Transaction Type: {transactionType}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"9. Store Number: {storeNumber}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"10. Location Type: {locationType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"11. Register Number: {registerNumber}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"12. Register Type: {registerType}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"13. Address 1: {result.get('address1', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"14. City: {result.get('city', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"15. State Code: {result.get('stateCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"16. Store Zip: {result.get('storeZip', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"17. Country Code: {countryCode}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"18. Store Phone Type: {storePhoneType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"19. Store Phone Number: {result.get('storePhoneNumber', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"20. ClerkId Type: {clerkIdType}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"21. Clerk Id: {clerkId}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"22. Clerk Name: {clerkName}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"23. Clerk Role: {clerkRole}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"24. Recipient Type: {recipientType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"25. First Name: {firstName}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"26. Last Name: {lastName}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"27. Email Address: {emailAddress}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"28. Loyalty Card Number: {loyaltyCardNumber}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"29. Loyalty Level: {loyaltyLevel}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"30. Customer ID: {customerID}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        
-        print(f"31. Alternate IDs\n     a.CROSS REFERENCE") if not (checkboxes.get('withoutStaticDataCheckbox', True) and checkboxes.get('withoutUnknownDataCheckbox', True)) else None
-        print(f"          i.SYSTEM REFERENCE: {SYSTEM_REFERENCE}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"          i.SYSTEM REFERENCE ID: {SYSTEM_REFERENCE_ID}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        
-        print(f"32. Language Selection: {languageSelection}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"33. Raw Text Receipt: {rawTextReceipt}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"34. Currency Type: {currencyType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"35. Output Language: {outputLanguage}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"36. Total Amount: {result.get('totalAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        print(f"36. Items Soldt: {itemSold}") if checkboxes.get('extractDataCheckbox', True) else None
-        
-        if "detailedTransactionData" in result and (checkboxes.get('extractDataCheckbox', True) or not checkboxes.get('withoutStaticDataCheckbox', True)):
-            for id, item in enumerate(result["detailedTransactionData"], start=1):
-                print(f"38. detailedTransactionData {id}:")
-                print(f"     39. Product Id Type: {productIdType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-                print(f"     40. Product Id: {productId}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     41. Description: {item.get('description', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     42. Quantity Sold Type: {item.get('quantitySoldType', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     43. Quantity Sold: {item.get('quantitySold', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     44. Item Received Type: {itemReceivedType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-                print(f"     45. Dollar Amount: {item.get('dollarAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        # else:
-        #     print(f"38. Detailed Transaction Data: *** Not found")
+            elif  customerEarningsMatch :=  customerEarningsPattern.search(line):  # Verifica si la línea corresponde 55. customer iii. Earnings
+                customerEarnings =  customerEarningsMatch.group(1)
 
-        if "discount" in result:
-            for id, item in enumerate(result["discount"], start=1):
-                #print(f"46. Discounts {id}:")
-                print(f"46. Discount Dollar Amount: {item.get('discountDollarAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"47. Ext Dollar Amount: {item.get('extDollarAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"48. Return Amount: {item.get('extDollarAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"49. Item Discounts") if checkboxes.get('extractDataCheckbox', True) or not checkboxes.get('withoutStaticDataCheckbox', True) else None
-                print(f"     iii. Discount Percent: {item.get('discountPercent', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     iv. Discount Amount: {item.get('discountAmount', '*** Not found'):.2f}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     v. Discount Description: {item.get('discountDescription', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     vi. Discount Reason Code: {item.get('discountReasonCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     vii. Discounting Method: {discountingMethod}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-                print(f"     viii. PrintLine: {item.get('printLine', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        else:
-            print(f"46. Discounts: *** Not implemented")
-        
-        if "itemTax" in result and (checkboxes.get('extractDataCheckbox', True) or not checkboxes.get('withoutStaticDataCheckbox', True)):
-            for id, item in enumerate(result["itemTax"], start=1):
-                print(f"50. Item Tax {id}:")
-                print(f"     ii. Tax Type: {taxType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-                print(f"     iii. Tax Amount: {item.get('taxAmount', '*** Not found'):.2f}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     iv. Tax Flag: {item.get('taxFlag', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     v. Tax Percent: {item.get('taxPercent', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     vi. Tax Description: {item.get('taxDescription', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     vii. Tax Authority: {item.get('taxAuthority', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     viii. Taxable Amount: {item.get('taxableAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        # else:
-        #     print(f"50. Item Tax: *** Not implemented")
-        
-        if "detailedTransactionData" in result and not (checkboxes.get('withoutStaticDataCheckbox', True)):
-            for id, item in enumerate(result["detailedTransactionData"], start=1):
-                print(f"51. Detailed TransactionData {id}:")
-                print(f"     i. Attribute Type: {attributeType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-                print(f"     ii. Attribute Description: {attributeDescription}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-                print(f"     iii. AttributeData: {'true' if item.get('taxFlag') in ['B', 'F'] else 'false'}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        # else:
-        #     print(f"51 Item Attributes: *** Not found")
+            elif customerRewardsBalanceMatch := customerRewardsBalancePattern.search(line):  # Verifica si la línea corresponde 55. customer iv. Rewards Balance
+                customerRewardsBalance = customerRewardsBalanceMatch.group(1)
+
+            elif customerNextRewardMatch := customerNextRewardPattern.search(line):  # Verifica si la línea corresponde 55. customer v. Next Reward
+                customerNextReward = customerNextRewardMatch.group(1)
+
+            elif customerRewardsCardMatch := customerRewardsCardPattern.search(line):  # Verifica si la línea corresponde 55. customer vi. Rewards Card
+                customerRewardsCard = customerRewardsCardMatch.group(1)
+
+            elif customerExpiringMatch := customerExpiringPattern.search(line):  # Verifica si la línea corresponde 55. customer vii. Expiring
+                customerExpiring = customerExpiringMatch.group(1)
+            #------------------------------ END CUSTOMER ---------------------------------
+
+            #------------------------------ START DATE --------------------------------
+            elif transactionDateTimeMatch := transactionDateTimePattern.search(line): #Verifica si la línea corresponde al 4. TransactionDate & 5. TransactionTime
+                transactionDate = datetime.strptime(transactionDateTimeMatch.group(1), '%m/%d/%y').strftime('%Y-%m-%d')
+                transactionTime = datetime.strptime(transactionDateTimeMatch.group(2), '%H:%M').strftime('%H:%M:00')
+            #------------------------------- END DATE ---------------------------------
+        #-> Termina el for (lectura de la transaccion)
+
+    #------------------------------ START ERROR -------------------------------
     
-        for countTender in range(1, len(result) + 1):  
-            key = "tender" + str(countTender)  
-            if key in result:  
-                # print(f"Clave: {key}")
-                # print("Valor:")
-                for item in result[key]:
+        idClient = None
+        isComplete = True
+
+        #se crea el registro de la trasaccion para empezar a almacenar los valores
+        idtransactionSource = db.InsertTransactionSource('2024-02-12 14:30:00', 'TXN123456test', 'TEST', 'TEST', trasnsaction, idTrasaccionOriginal)
+        idtransaction = db.InsertTransaction(None, None, None, None, None, datetime.now(), False, None, idtransactionSource)
+
+        # Validamos si totalAmount está vacío o no 
+        print("===================")
+        print("===== BALANCE =====")
+        print("===================")
+        if totalAmount in [None, ""]:
+            isComplete = False 
+            
+            error_message = "The BALANCE value could not be extracted"
+            
+            db.Insert_nn_Error_Transaction(2, idtransaction, error_message)  
+
+            print(error_message)
+
+            error_log = {
+                "transaction_id": idTrasaccionOriginal,
+                "error_type": "MISSING_FIELD",
+                "error_detail": error_message,
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+
+            return  
+        else:
+            balanceCalculed = round((itemSold - total_discount) + float(total_tax), 2)
+            if(float(totalAmount) != balanceCalculed):
+                isComplete = False 
+            
+                error_message = f"The extracted sales amount {(itemSold):.2f} - discounts {(total_discount):.2f} + taxes {(total_tax):.2f} = {balanceCalculed} does not match the extracted balance {totalAmount}."
                 
-                    print(f"52. Tender Type Date {countTender}:") if checkboxes.get('extractDataCheckbox', True) or not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-                    print(f"     i. Tender Entry Method: {item.get('tenderEntryMethod', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                    print(f"     ii. Tender Type: {item.get('tenderType', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                    print(f"     iii. Account Number: {item.get('accountNumber', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                    print(f"     iv. Auth Code: {item.get('authCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                    print(f"     v. Total Amount: {item.get('tenderAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                    print(f"     vi. Tender Reference: {item.get('tenderReference', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                    print("     vii. Payment Response:") if checkboxes.get('extractDataCheckbox', True) or not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-                    print(f"          1. Response IDe: {item.get('tenderReference', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                    print(f"          2. Card Type: {item.get('cardType', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                    print(f"          3. ISO Res Code: {item.get('isoResCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                    print(f"          4. Aux Response: {item.get('auxResponse', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                    print(f"          5. Response Code: {item.get('responseCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                    print(f"          6. Response Message: {item.get('responseMessage', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                    print(f"          7. Display Message: {item.get('displayMessage', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                    print(f"          8. Echo Data: {echoData}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+                db.Insert_nn_Error_Transaction(2, idtransaction, error_message)  
 
-                    countTender += 1 
+                print(error_message)
+
+                error_log = {
+                    "transaction_id": idTrasaccionOriginal,
+                    "error_type": "MISSING_FIELD",
+                    "error_detail": error_message,
+                    "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                }
+
+                return
             else:
-                break
-        
-        # print("52. Tender Type Date:") if checkboxes.get('extractDataCheckbox', True) or not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        # print(f"     i. Tender Entry Method: {result.get('tenderEntryMethod', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        # print(f"     ii. Tender Type: {result.get('tenderType', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        # print(f"     iii. Account Number: {result.get('accountNumber', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        # print(f"     iv. Auth Code: {result.get('authCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        # print(f"     v. Total Amount: {result.get('tenderAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        # print(f"     vi. Tender Reference: {result.get('tenderReference', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        # print("     vii. Payment Response:") if checkboxes.get('extractDataCheckbox', True) or not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        # print(f"          1. Response IDe: {result.get('tenderReference', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        # print(f"          2. Card Type: {result.get('cardType', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        # print(f"          3. ISO Res Code: {result.get('isoResCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        # print(f"          4. Aux Response: {result.get('auxResponse', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        # print(f"          5. Response Code: {result.get('responseCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        # print(f"          6. Response Message: {result.get('responseMessage', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        # print(f"          7. Display Message: {result.get('displayMessage', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        # print(f"          8. Echo Data: {echoData}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        
-        if "finalTaxLines" in result and checkboxes.get('extractDataCheckbox', True):
-            for id, item in enumerate(result["finalTaxLines"], start=1):
-                print(f"53. FinalTaxLines {id}:")
-                print(f"     i. Tax Amount: {item.get('taxAmount', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     ii. Tax Percent: {item.get('taxPercent', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     iii. Tax Description: {item.get('taxDescription', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     iv. Tax Detail Number: {item.get('taxDetailNumber', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-                print(f"     v. Tax Rule Code: {item.get('taxRuleCode', '*** Not found')}") if checkboxes.get('extractDataCheckbox', True) else None
-        
-        if checkboxes.get('extractDataCheckbox', True):
-            print("54. Totals Transaction Data:")
-            print(f"     i. Sub Total Amount: {result.get('totalAmount', 0)} - {(totalTax):.2f} = {(float(result.get('totalAmount', 0)) - totalTax):.2f}")
-            print(f"     ii. Discount Total: {result.get('discountTotal', '*** Not found')}")
-            print(f"     iii. Discount Total Amount: {(float(result.get('totalAmount', 0)) - totalTax):.2f}")
-            print(f"     iv. Total Amount: {result.get('totalAmount', '*** Not found')}")
-            print(f"     v. Change: {result.get('change', '*** Not found')}")
-        
-        print(f"55. Transaction Document") if not (checkboxes.get('withoutStaticDataCheckbox', True) and checkboxes.get('withoutUnknownDataCheckbox', True)) else None
-        print(f"          i. Document Name: {documentName}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"          ii. Document Type: {documentType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"          iii. Document Ref Id: {documentRefId}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"          iv. Document Media Type: {documentMediaType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"          v. Mime Content Type: {mimeContentType}") if not checkboxes.get('withoutStaticDataCheckbox', True) else None
-        print(f"          vi. Docu Capture Date Time: {docuCaptureDateTime}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
-        print(f"          vii.	Document Date: {documentDate}") if not checkboxes.get('withoutUnknownDataCheckbox', True) else None
+                print(f"> {totalAmount}")
 
-        if checkboxes.get('extractDataCheckbox', True):
-            print("55. Extra Data Customer:")
-            print(f"     i. Name:  {result.get('extraName', '*** Not found')}")
-            print(f"     ii. Account:  {result.get('extraAccount', '*** Not found')}")
-            print(f"     iii. Earnings:  {result.get('extraEarnings', '*** Not found')}")
-            print(f"     iv. Rewards Balance:  {result.get('extraRewardsBalance', '*** Not found')}")
-            print(f"     v. Next Reward:  {result.get('extraNextReward', '*** Not found')}")
-            print(f"     vi. Rewards Card:  {result.get('extraRewardsCard', '*** Not found')}")
-            print(f"     vii. Expiring On:  {result.get('extraExpiring', '*** Not found')}")
-    
-        print(f"")
-        print(f"> CONFIRMATION")
-        print(f"> Total sold (calculated): {(itemSold):.2f}")
-        print(f"> minus")
-        print(f"> Total Discount (calculated): {(totalDescuento):.2f}")
-        print(f"> Subtotal (calculated): {(itemSold):.2f} - {(totalDescuento):.2f} = {(itemSold - totalDescuento):.2f} ")
-        print(f"> Tax (extracted) {(totalTax):.2f}")
-        balanceCalculed = round((itemSold - totalDescuento) + float(totalTax), 2)
-        print(f"> {(itemSold - totalDescuento):.2f} + {(totalTax):.2f} = {balanceCalculed} (extracted)")
-        print(f"> Balance = {result.get('totalAmount', '*** Not found')}")
-        if(float(result.get('totalAmount', 0)) == balanceCalculed):
-            print(f">>>>> Data extraction successful!")
+        # Validamos si el bloque de tender_data está vacío o no  y si lo pagado es igual al balance
+        print("==================")
+        print("===== TENDER =====")
+        print("==================")
+        if "tender" not in tender_data or not tender_data["tender"] or "tenderType" not in tender_data["tender"][0]:
+            isComplete = False  # Marcar la transacción como incompleta
+
+            error_message = "No tender was extracted from the tender_data block"
+            
+            db.Insert_nn_Error_Transaction(2, idtransaction, error_message)  
+
+            print(error_message)
+
+            error_log = {
+                "transaction_id": idTrasaccionOriginal,
+                "error_type": "MISSING_FIELD",
+                "error_detail": error_message,
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+
+            return
         else:
-            print(f">>>>> Error: Data extraction failed")
+            print(f"> tender {(total_tender):.2f} (calculado) =? balance {totalAmount} (extraido)")
 
-        # except Exception as e:
-        #     print(f"Error general en ReadTransaction: {str(e)}")
+            if float(total_tender) != float(totalAmount):
+                print(f"{tender_wic}> tender {tender_wic}: total tender {(total_tender):.2f} (calculado) =? balance {(totalAmount):.2f} (extraído) - tax {(total_tax):.2f}")
+                
+                if (tender_wic and float(total_tender) != (float(totalAmount) - float(total_tax))):
+                    print(f">>>>> Error: Data TENDER extraction failed1")
+                    
+                    error_message = f"The calculated amount of the WIC tender {(total_tender):.2f} != the extracted balance {(totalAmount):.2f} - tax {(total_tax):.2f}, they do not match"
+                elif not tender_wic:
+                    print(f">>>>> Error: Data TENDER extraction failed2")
+
+                    error_message = f"The calculated amount of the tenders {(total_tender):.2f} != the extracted balance {totalAmount}, they do not match"
+
+                db.Insert_nn_Error_Transaction(2, idtransaction, error_message)
+
+                error_log = {
+                    "transaction_id": idTrasaccionOriginal,
+                    "error_type": "VALUE_MISMATCH",
+                    "error_detail": error_message,
+                    "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                }
+
+                return
+            else:
+                for idx, tender in enumerate(tender_data["tender"], start=1):
+                    db.InsertTender(
+                        tender["tenderType"], 
+                        tender["tenderAmount"],
+                        tender.get("tenderEntryMethod", None),  
+                        tender.get("accountNumber", None),
+                        tender.get("authCode", None),
+                        tender.get("tenderReference", None),
+                        tender.get("cardType", None),
+                        tender.get("isoResCode", None),
+                        tender.get("auxResponse", None),
+                        tender.get("responseCode", None),
+                        tender.get("responseMessage", None),
+                        tender.get("displayMessage", None),
+                        idtransaction  
+                    )
+
+                    print(f"> Pago {idx}:")
+                    for key, value in tender.items():
+                        print(f">     {key}: {value}")
+
+        # #validamos si falta algun campo correspondiente a store_data
+        print("=================")
+        print("===== STORE =====")
+        print("=================")
+        fields_to_check = ["name", "address", "city", "stateCode", "storeZip", "storePhoneNumber"]
+        missing_fields = [field for field in fields_to_check if not store_data.get(field)]
+        if missing_fields:
+            isComplete = False
+            
+            error_message = f"Missing fields in store_data block: {', '.join(missing_fields)}"
+
+            db.Insert_nn_Error_Transaction(2, idtransaction, error_message)
+            
+            print(error_message)
+            
+            error_log = {
+                "transaction_id": idTrasaccionOriginal,
+                "error_type": "MISSING_FIELD",
+                "error_detail": error_message,
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+
+            return
+        else:
+            idClient = db.InsertStore(store_data["name"], store_data["address"], store_data["city"], store_data["stateCode"], store_data["storeZip"], store_data["storePhoneNumber"])
+
+            for key, value in store_data.items():
+                print(f"> {key}: {value}")
+
+        # Validamos si el bloque item_data está vacío o no 
+        print("================")
+        print("===== ITEM =====")
+        print("================")
+        if "item" not in item_data or not item_data["item"]:
+            isComplete = False  
+
+            error_message = "No products were extracted from the item_data block"
+                                              
+            db.Insert_nn_Error_Transaction(2, idtransaction, error_message)  
+
+            print(error_message)
+
+            error_log = {
+                "transaction_id": idTrasaccionOriginal,
+                "error_type": "MISSING_FIELD",
+                "error_detail": error_message,
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+
+            return
+        else:
+            for idx, item in enumerate(item_data["item"], start=1):
+                print(f"> Producto {idx}:")
+                
+                idProduct = db.InsertProduct(item["description"])
+                db.Insert_nn_Product_Transaction(
+                    idProduct,
+                    idtransaction,
+                    item["quantitySoldType"],
+                    item["quantitySold"],
+                    item["dollarAmount"],
+                    item["taxFlag"]
+                )
+
+                for key, value in item.items():
+                    print(f">     {key}: {value}")
+
+        # Validamos si el bloque discount_data está vacío o no 
+        print("====================")
+        print("===== DISCOUNT =====")
+        print("====================")
+        for idx, item in enumerate(discount_data["discount"], start=1):
+            print(f"> Descuento {idx}:")
+
+            idProduct = db.InsertProduct(item["discountDescription"])
+
+            idDiscount = db.InsertDiscount(
+                item["discountDollarAmount"],
+                item["extDollarAmount"],
+                item["discountPercent"],
+                item["discountAmount"],
+                item["discountReasonCode"],
+                item["printLine"]
+            )
+
+            db.Insert_nn_Discount_Product_Transaction(idDiscount, idProduct, idtransaction)
+
+            for key, value in item.items():
+                print(f"     {key}: {value}")
+
+        # Validamos si el bloque tax_data está vacío o no 
+        #if (not balanceCorrect and not tenderCorrect and ("tax" not in tax_data or tax_data["tax"] is None or not tax_data["tax"])):
+        print("===============")
+        print("===== TAX =====")
+        print("===============")
+        if "tax" not in tax_data or tax_data["tax"] is None or not tax_data["tax"]:
+            isComplete = False  
+
+            error_message = "No tax was extracted from the tax_data block"
+
+            db.Insert_nn_Error_Transaction(2, idtransaction, error_message)  
+
+            print(error_message)
+
+            error_log = {
+                "transaction_id": idTrasaccionOriginal,
+                "error_type": "MISSING_FIELD",
+                "error_detail": error_message,
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+
+            return
+        else:
+            for idx, item in enumerate(tax_data["tax"], start=1):
+                print(f"> Tax {idx}:")
+
+                idTax = db.InsertTax(
+                    item["taxAmount"],
+                    item["taxPercent"],
+                    item["taxDescription"],
+                    item["taxDetailNumber"],
+                    item["taxRuleCode"],
+                    idtransaction
+                )
+
+                for key, value in item.items():
+                    print(f"     {key}: {value}")
+
+        # Validamos si change está vacío o no 
+        print("==================")
+        print("===== CHANGE =====")
+        print("==================")
+        if change in [None, ""]:
+            isComplete = False  
+
+            error_message = f"The CHANGE value could not be extracted"
+            
+            db.Insert_nn_Error_Transaction(2, idtransaction, error_message) 
+
+            print(error_message)
+
+            error_log = {
+                "transaction_id": idTrasaccionOriginal,
+                "error_type": "INVALID_DATA_VALUES",
+                "error_detail": error_message,
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+
+            return
+        else:
+            print(f"> {change}")
+
+        # Validamos si savingTotal está vacío o no 
+        print("=========================")
+        print("===== SAVINGS TOTAL =====")
+        print("=========================")
+        if savingTotal in [None, ""]:
+            isComplete = False  
+
+            error_message = "The SAVINGS TOTAL value could not be extracted"
+
+            db.Insert_nn_Error_Transaction(3, idtransaction, error_message)  
+
+            print(error_message)
+
+            error_log = {
+                "transaction_id": idTrasaccionOriginal,
+                "error_type": "MISSING_FIELD",
+                "error_detail": error_message,
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+        else:
+            print(f"> {savingTotal}")
+
+        # Validamos si transactionDate y transactionTime está vacío o no 
+        print("=================================")
+        print("===== TRANSACTION DATE/TIME =====")
+        print("=================================")
+        if transactionDate in [None, ""] or transactionTime in [None, ""]:
+            isComplete = False  
+
+            error_message = "The TRANSACTION DATE/TIME value could not be extracted"
+
+            db.Insert_nn_Error_Transaction(2, idtransaction, error_message)  
+
+            print(error_message)
+
+            error_log = {
+                "transaction_id": idTrasaccionOriginal,
+                "error_type": "MISSING_FIELD",
+                "error_detail": error_message,
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+
+            return
+        else:
+            print(f"> {transactionDate}")
+            print(f"> {transactionTime}")
+
+
+        # validamos si falta algun campo correspondiente a customer_data esta vacio
+        print("====================")
+        print("===== CUSTOMER =====")
+        print("====================")
+        customer_data = {
+            "name":  customerName,
+            "account":  customerAccount,
+            "earnings":  customerEarnings,
+            "rewardsBalance": customerRewardsBalance,
+            "nextReward": customerNextReward,
+            "rewardsCard": customerRewardsCard,
+            "expiring": customerExpiring
+        }  
+        missing_customer = []
+        has_valid_data = False
+
+        for key, value in customer_data.items():
+            if value in [None, ""]:
+                missing_customer.append(key)
+            else:
+                has_valid_data = True
+
+        if missing_customer:
+            error_message = f"Missing fields in customer block: {', '.join(missing_customer)}"
+
+            db.Insert_nn_Error_Transaction(3, idtransaction, error_message)  
+            
+            print(error_message)
+            
+            error_log = {
+                "transaction_id": idTrasaccionOriginal,
+                "error_type": "MISSING_FIELD",
+                "error_detail": error_message,
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+
+        if has_valid_data:
+            idCustomer = db.InsertCustomer(
+                customer_data["name"],
+                customer_data["account"],
+                customer_data["earnings"],
+                customer_data["rewardsBalance"],
+                customer_data["nextReward"],
+                customer_data["rewardsCard"],
+                customer_data["expiring"],
+                idtransaction  # Relación con la transacción
+            )
+        
+        for key, value in customer_data.items():
+            print(f"> {key}: {value}")
+
+        print("==================")
+        print("===== RESULT =====")
+        print("==================")
+        if error:
+            print(">>> Hubo errores en algunas transacciones. Revisa 'missing_data.log'.")
+            for detail in error:
+                logging.warning(f"ERROR {detail['error_type']} en transaccion {detail['transaction_id']}: {detail['error_detail']}")
+        else:
+            print(">>> No hubo errores en ninguna transaccion.")
+
+    except Exception as error:
+        db.Insert_nn_Error_Transaction(1, idtransaction, error)
+        print(f"Unknown error try 1: {error}")
+        logging.error(f"Unknown error try 1 transaction_id: {idTrasaccionOriginal}: {error}")
+
+ 
+
+    
+        
+
+   
+   
 
 if __name__ == "__main__":
     output_file = "output.txt"  # Manteniendo la salida a archivo
@@ -728,7 +942,9 @@ if __name__ == "__main__":
         # Extraer valores del JSON
         mode = data.get("mode")
         checkboxes = data.get("checkboxes", {})
-        qty = data.get("qty", 100)
+        
+        qty = int(data.get("qty"))
+        # qty = 5 #data.get("qty", 100)
         receipt_text = data.get("text", "")
 
         if mode == 'onlyOne':
@@ -736,7 +952,7 @@ if __name__ == "__main__":
             print(f"*******************************************************************")
             print(f"                        TRANSACTION id: N/A                        ")
             print(f"*******************************************************************")
-            result = ReadTransaction(receipt_text, checkboxes)
+            result = ReadTransaction(receipt_text, checkboxes, 'N/A')
             end_processing = time.time()
 
             print(f"*******************************************************************")
@@ -747,7 +963,7 @@ if __name__ == "__main__":
             
         elif mode == 'database':  
             start_db = time.time()
-            transactions = GetTransaction(qty)
+            transactions = db.GetTransaction(qty)
             end_db = time.time()
 
             start_processing = time.time()
@@ -756,7 +972,7 @@ if __name__ == "__main__":
                     print(f"*******************************************************************")
                     print(f"                         TRANSACTION id: {item['id']}              ")
                     print(f"*******************************************************************")
-                    result = ReadTransaction(item['param_value'], checkboxes)
+                    result = ReadTransaction(item['param_value'], checkboxes, item['id'])
             end_processing = time.time()
 
             print(f"*******************************************************************")
@@ -777,63 +993,3 @@ if __name__ == "__main__":
         file.write(captured_output.getvalue())
     
     print(captured_output.getvalue())
-    
-# if __name__ == "__main__":
-#     output_file = "output.txt"
-#     qty = 100
-
-#     original_stdout = sys.stdout  
-#     captured_output = StringIO() 
-#     sys.stdout = captured_output 
-
-#     checkboxes_json = sys.argv[2] 
-#     mode = sys.argv[3]
-    
-#     checkboxes = json.loads(checkboxes_json) 
-    
-#     try: 
-#         if mode == 'onlyOne':
-#             receipt_text = sys.argv[1]
-            
-#             start_processing = time.time()
-#             print(f"*******************************************************************")
-#             print(f"                        TRANSACTION id: N/A                        ")
-#             print(f"*******************************************************************")
-#             result = ReadTransaction(receipt_text, checkboxes)  
-#             end_processing = time.time()  
-
-#             print(f"*******************************************************************")
-#             print(f"                               TIMES                               ")
-#             print(f"*******************************************************************")
-#             processing_time = end_processing - start_processing
-#             print(f"Record processing time: {processing_time:.3f} seconds")
-            
-#         elif mode == 'database':  
-#             start_db = time.time()
-#             data = GetTransaction(qty)  # Llama a la función para traer los registros
-#             end_db = time.time()
-
-#             start_processing = time.time()
-#             for item in data:
-#                 if '<line>' in item['param_value']:
-#                     print(f"*******************************************************************")
-#                     print(f"                         TRANSACTION id: {item['id']}              ")
-#                     print(f"*******************************************************************")
-#                     result = ReadTransaction(item['param_value'], checkboxes)   
-#             end_processing = time.time()
-            
-#             print(f"*******************************************************************")
-#             print(f"                               TIMES                               ")
-#             print(f"*******************************************************************")
-#             db_time = end_db - start_db
-#             print(f"Database reading time: {db_time:.3f} seconds")
-#             processing_time = end_processing - start_processing
-#             print(f"Record processing time: {processing_time:.3f} seconds")
-#             end_processing = time.time()  
-
-#     finally:
-#         sys.stdout = original_stdout
-
-#     with open(output_file, "w", encoding="utf-8") as file:
-#         file.write(captured_output.getvalue())
-#     print(captured_output.getvalue())
